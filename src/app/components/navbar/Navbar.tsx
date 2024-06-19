@@ -2,9 +2,10 @@
 import Image from "next/image"
 import image1 from '../../assets/img/concejo/logo-transparent.png';
 import image2 from '../../assets/img/concejo/logo-blue-transparent.png';
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import './navbar.css'
 import Link from "next/link";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export const Navbar = () => {
 
@@ -21,6 +22,10 @@ export const Navbar = () => {
             setLogoDark(false)
         }
     })
+
+    
+
+
     
 
     return (
@@ -35,22 +40,21 @@ export const Navbar = () => {
                     
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span className="fa fa-bars"></span>
+                    {/* <span className="fa fa-bars"></span> */}
+                    <Icon icon='material-symbols:menu' />
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto py-0">
-                        <a href="index.html" className="nav-item nav-link active">Home</a>
-                        <a href="about.html" className="nav-item nav-link">About</a>
-                        <a href="service.html" className="nav-item nav-link">Services</a>
-                        <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
+                        <a href="about.html" className="nav-item nav-link">El Concejo</a>
+                        {/* <div className="nav-item dropdown">
+                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Concejales</a>
                             <div className="dropdown-menu m-0">
-                                <a href="blog.html" className="dropdown-item">Blog Grid</a>
+                                <a href="blog.html" className="dropdown-item">Concejales</a>
                                 <a href="detail.html" className="dropdown-item">Blog Detail</a>
                             </div>
-                        </div>
+                        </div> */}
                         <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sesiones del Concejo</a>
                             <div className="dropdown-menu m-0">
                                 <a href="price.html" className="dropdown-item">Pricing Plan</a>
                                 <a href="feature.html" className="dropdown-item">Our features</a>
@@ -59,9 +63,12 @@ export const Navbar = () => {
                                 <a href="quote.html" className="dropdown-item">Free Quote</a>
                             </div>
                         </div>
-                        <a href="contact.html" className="nav-item nav-link">Contact</a>
+                        <a href="contact.html" className="nav-item nav-link">Proyectos y Ordenanzas</a>
+                        <a href="contact.html" className="nav-item nav-link">Transparencia</a>
+                        <a href="contact.html" className="nav-item nav-link">Participación Ciudadana</a>
+                        <a href="contact.html" className="nav-item nav-link">Contacto</a>
                     </div>
-                    <button type="button" className="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal">Search</button>
+                    <button type="button" className="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><Icon icon={'material-symbols:search'} className="fs-3"/></button>
                 </div>
             </nav>
         </>

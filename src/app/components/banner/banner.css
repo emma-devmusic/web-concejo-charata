@@ -1,0 +1,10 @@
+
+
+.slick-next {
+    /* display: none !important; */
+    transform: translate(-50px,20px);
+}
+
+.slick-prev {
+    /* transform: translateX(50px); */
+}
