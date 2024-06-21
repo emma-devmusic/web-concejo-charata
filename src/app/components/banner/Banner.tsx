@@ -28,14 +28,21 @@ export const Banner = () => {
             <Slider {...settings}>
                 <div className={`carousel-inner`}>
                     <div className="carousel-item active">
-                        <Image width={1920} height={1080} className={''} style={{
+                        <Image width={1366} height={900} className={''} style={{
+                            width: '100%',
+                            height: 'auto',
+                            maxHeight: '900px',
+                            minHeight: '400px',
                             objectFit: 'cover'
                         }} src={image1} alt="Image" />
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{ maxWidth: "900px" }}>
                                 {/* <h5 className="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5> */}
                                 <h2 className="display-1 text-white mb-md-4 animated zoomIn">
-                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" />
+                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" style={{
+                                        maxWidth: '500px',
+                                        height: 'auto'
+                                    }} />
                                 </h2>
                                 <a href="quote.html" className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Noticias</a>
                                 <a href="" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contactános</a>
@@ -45,14 +52,21 @@ export const Banner = () => {
                 </div>
                 <div className={`carousel-inner`}>
                     <div className="carousel-item active">
-                        <Image width={1920} height={1080} className={``} style={{
+                        <Image width={1366} height={900} className={``} style={{
+                            width: '100%',
+                            height: 'auto',
+                            maxHeight: '900px',
+                            minHeight: '400px',
                             objectFit: 'cover'
                         }} src={image2} alt="Image" />
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{ maxWidth: "900px" }}>
                                 {/* <h5 className="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5> */}
                                 <h1 className="display-1 text-white mb-md-4 animated zoomIn">
-                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" />
+                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" style={{
+                                        maxWidth: '500px',
+                                        height: 'auto'
+                                    }} />
                                 </h1>
                                 <a href="quote.html" className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Noticias</a>
                                 <a href="" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contactános</a>
@@ -62,14 +76,21 @@ export const Banner = () => {
                 </div>
                 <div className={`carousel-inner`}>
                     <div className="carousel-item active">
-                        <Image width={1920} height={1080} className={``} style={{
+                        <Image width={1366} height={900} className={``} style={{
+                            width: '100%',
+                            height: 'auto',
+                            maxHeight: '900px',
+                            minHeight: '400px',
                             objectFit: 'cover'
                         }} src={image3} alt="Image" />
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{ maxWidth: "900px" }}>
                                 {/* <h5 className="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5> */}
                                 <h1 className="display-1 text-white mb-md-4 animated zoomIn">
-                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" />
+                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" style={{
+                                        maxWidth: '500px',
+                                        height: 'auto'
+                                    }} />
                                 </h1>
                                 <a href="quote.html" className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Noticias</a>
                                 <a href="" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contactános</a>

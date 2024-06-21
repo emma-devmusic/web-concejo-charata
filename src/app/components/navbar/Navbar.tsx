@@ -1,36 +1,48 @@
 'use client'
+
 import Image from "next/image"
 import image1 from '../../assets/img/concejo/logo-transparent.png';
 import image2 from '../../assets/img/concejo/logo-blue-transparent.png';
-import { useRef, useState } from "react"
-import './navbar.css'
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import './navbar.css'
 
 export const Navbar = () => {
 
     const ref = useRef<HTMLDivElement>(null);
     const [logoDark, setLogoDark] = useState(false)
-    
-    
-    window.addEventListener('scroll', () => {
-        if(scrollY > 50) {
-            ref.current?.classList.add('sticky-top', 'shadow-sm')
-            setLogoDark(true)
-        } else {
-            ref.current?.classList.remove('sticky-top', 'shadow-sm')
-            setLogoDark(false)
-        }
-    })
+    // const [resize, setResize] = useState(window.innerWidth)
 
     
+
+    // useEffect( () => {
+        if(typeof window !== "undefined"){
+            window.addEventListener("resize", () => {
+                if(window.innerWidth < 992) {
+                    setLogoDark(true)
+                }
+            })
+            window.addEventListener('scroll', () => {
+                if(scrollY > 50) {
+                    ref.current?.classList.add('sticky-top', 'shadow-sm')
+                    setLogoDark(true)
+                } else if(scrollY < 50 && window.innerWidth < 992) {
+                    setLogoDark(true)
+                } else {
+                    ref.current?.classList.remove('sticky-top', 'shadow-sm')
+                    setLogoDark(false)
+                }
+            })
+        }
+    // }, [window.innerWidth, window.scrollY])
 
 
     
 
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0" ref={ref}>
+            <nav className={`navbar navbar-expand-lg navbar-dark px-3 py-1 py-lg-0 px-lg-5 position-sticky`} ref={ref}>
                 <Link href="/" className="navbar-brand p-0">
                     {
                         logoDark 
@@ -40,35 +52,30 @@ export const Navbar = () => {
                     
                 </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    {/* <span className="fa fa-bars"></span> */}
-                    <Icon icon='material-symbols:menu' />
+                    <Icon icon='material-symbols:menu' className="fs-2"/>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse">
                     <div className="navbar-nav ms-auto py-0">
-                        <a href="about.html" className="nav-item nav-link">El Concejo</a>
-                        {/* <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Concejales</a>
-                            <div className="dropdown-menu m-0">
-                                <a href="blog.html" className="dropdown-item">Concejales</a>
-                                <a href="detail.html" className="dropdown-item">Blog Detail</a>
-                            </div>
-                        </div> */}
                         <div className="nav-item dropdown">
-                            <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sesiones del Concejo</a>
+                            <div className="nav-link dropdown-toggle" data-bs-toggle="dropdown">El Concejo</div>
+                            <div className="dropdown-menu m-0">
+                                <Link href={'/concejo-del-municipio'} className="dropdown-item">Concejo del Municipio </Link>
+                                <Link href={'/concejales'} className="dropdown-item">Concejales</Link>
+                                <Link href={'/transparencia'} className="dropdown-item">Transparencia</Link>
+                            </div>
+                        </div>
+                        <div className="nav-item dropdown">
+                            <div className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sesiones del Concejo</div>
                             <div className="dropdown-menu m-0">
                                 <a href="price.html" className="dropdown-item">Pricing Plan</a>
                                 <a href="feature.html" className="dropdown-item">Our features</a>
-                                <a href="team.html" className="dropdown-item">Team Members</a>
-                                <a href="testimonial.html" className="dropdown-item">Testimonial</a>
-                                <a href="quote.html" className="dropdown-item">Free Quote</a>
                             </div>
                         </div>
-                        <a href="contact.html" className="nav-item nav-link">Proyectos y Ordenanzas</a>
-                        <a href="contact.html" className="nav-item nav-link">Transparencia</a>
-                        <a href="contact.html" className="nav-item nav-link">Participación Ciudadana</a>
-                        <a href="contact.html" className="nav-item nav-link">Contacto</a>
+                        <Link href="contact.html" className="nav-item nav-link no-wrap">Proyectos</Link>
+                        <Link href="contact.html" className="nav-item nav-link no-wrap">Ciudadanos</Link>
+                        <Link href="contact.html" className="nav-item nav-link no-wrap">Contacto</Link>
                     </div>
-                    <button type="button" className="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><Icon icon={'material-symbols:search'} className="fs-3"/></button>
+                    {/* <button type="button" className="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><Icon icon={'material-symbols:search'} className="fs-3"/></button> */}
                 </div>
             </nav>
         </>

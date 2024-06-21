@@ -1,14 +1,13 @@
-import { useRef, useState } from "react";
-import { Topbar, NavBanner, Facts, AboutUs, Features, Services, ContactUs, Team, BlogPosts, Footer } from "../components";
+
+import { Facts, AboutUs, Features, Services, ContactUs, Team, BlogPosts, Footer, Navbar, BackToTop, Banner } from "../components";
+
 
 export const HomeView = () => {
 
-    
-
     return (
         <div >
-            <Topbar />
-            <NavBanner />
+            <Navbar />
+            <Banner />
             <Facts />
             <AboutUs />
             <Features />
@@ -17,6 +16,7 @@ export const HomeView = () => {
             <Team />
             <BlogPosts />
             <Footer />
+            <BackToTop />
         </div>
     )
 }

@@ -18,8 +18,8 @@ export const Services = () => {
                                 height: '20px'
                             }}/>
                         </div>
-                        <h4 className="mb-3">Historia del Concejo</h4>
-                        <p className="m-0">Una reseña breve sobre la historia del Concejo del Municipio de Charata.</p>
+                        <h4 className="mb-3">Concejales</h4>
+                        <p className="m-0">Conoce quienes integran el cuerpo del Concejo del Municipio de Charata.</p>
                         <a className="btn btn-lg btn-primary rounded" href="">
                             <Icon icon={'maki:arrow'} className='text-white' />
                         </a>

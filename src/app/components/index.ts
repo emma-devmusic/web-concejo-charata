@@ -9,3 +9,8 @@ export * from './contactUs/ContactUs';
 export * from './team/Team';
 export * from './blog/BlogPosts';
 export * from './footer/Footer';
+export * from './banner/Banner';
+export * from './smallBanner/SmallBanner';
+export * from './BackToTop';
+export * from './content/Content';
+export * from './sidebar/SidebarNavigation';
