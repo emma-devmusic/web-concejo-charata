@@ -9,7 +9,7 @@ export const BlogPosts = () => {
             <div className="container py-5">
                 <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{maxWidth: "600px"}}>
                     <h5 className="fw-bold text-primary text-uppercase">Blogs - Noticias</h5>
-                    <h1 className="mb-0">Enterate de Las Últimas Noticias e Información Relevante</h1>
+                    <h1 className="mb-0">Enterate de Noticias y Resúmenes de Sesiones</h1>
                 </div>
                 <div className="row g-5">
                     <div className="col-lg-4 wow slideInUp" data-wow-delay="0.3s">

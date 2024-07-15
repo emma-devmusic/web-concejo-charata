@@ -1,8 +1,10 @@
+import { Concejales } from "../views/Concejales";
 
 export default function ConcejalesPage() {
+    
     return (
         <div>
-            <h1>Concejales Page</h1>
+            <Concejales />
         </div>
     );
 }

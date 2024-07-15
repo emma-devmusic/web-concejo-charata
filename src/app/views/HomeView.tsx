@@ -13,7 +13,7 @@ export const HomeView = () => {
             <Features />
             <Services />
             <ContactUs />
-            <Team />
+            {/* <Team /> */}
             <BlogPosts />
             <Footer />
             <BackToTop />

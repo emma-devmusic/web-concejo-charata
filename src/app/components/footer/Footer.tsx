@@ -1,6 +1,7 @@
 import logo from '../../assets/img/concejo/logo-transparent.png';
 import { Icon } from "@iconify/react/dist/iconify.js"
 import Image from "next/image"
+import Link from 'next/link';
 
 export const Footer = () => {
     return (
@@ -23,34 +24,32 @@ export const Footer = () => {
                                     </div>
                                     <div className="d-flex align-items-center mb-2">
                                         <Icon className='me-1' icon={'mdi:google-maps'} />
-                                        <p className="mb-0">123 Street, New York, USA</p>
+                                        <p className="mb-0">Rivadavia 372, Charata, Chaco</p>
                                     </div>
                                     <div className="d-flex align-items-center mb-2">
                                         <Icon className='me-1' icon={'ri:mail-fill'} />
-                                        <p className="mb-0">info@example.com</p>
+                                        <p className="mb-0">concejoch@gmail.com</p>
                                     </div>
                                     <div className="d-flex align-items-center mb-2">
                                         <Icon className='me-1' icon={'ic:round-phone'} />
-                                        <p className="mb-0">+012 345 67890</p>
+                                        <p className="mb-0">+012 345 6789</p>
                                     </div>
                                     <div className="d-flex mt-4">
-                                        <a className="btn btn-primary btn-square me-2" href="#"><Icon icon="ri:facebook-fill" /></a>
-                                        {/* <a className="btn btn-primary btn-square me-2" href="#"><i className="fab fa-facebook-f fw-normal"></i></a>
-                                        <a className="btn btn-primary btn-square me-2" href="#"><i className="fab fa-linkedin-in fw-normal"></i></a> */}
-                                        <a className="btn btn-primary btn-square" href="#"><Icon icon="mdi:instagram" /></a>
+                                        <Link className="btn btn-primary btn-square me-2" href="#"><Icon icon="ri:facebook-fill" /></Link>
+                                        <Link className="btn btn-primary btn-square" href="#"><Icon icon="mdi:instagram" /></Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
                                     <div className="section-title section-title-sm position-relative pb-3 mb-4">
-                                        <h3 className="text-light mb-0">Quick Links</h3>
+                                        <h3 className="text-light mb-0">Enlaces</h3>
                                     </div>
                                     <div className="link-animated d-flex flex-column justify-content-start">
-                                        <a className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Home</a>
-                                        <a className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />About Us</a>
-                                        <a className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Our Services</a>
-                                        <a className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Meet The Team</a>
-                                        <a className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Latest Blog</a>
-                                        <a className="text-light" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Contact Us</a>
+                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Home</Link>
+                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />About Us</Link>
+                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Our Services</Link>
+                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Meet The Team</Link>
+                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Latest Blog</Link>
+                                        <Link className="text-light" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Contact Us</Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -71,11 +70,11 @@ export const Footer = () => {
                                 <p className="mb-0">
                                     &copy; 
                                     <a className="text-white border-bottom" href="#">Consejo De La Municipalidad de Charata</a>
-                                    . All Rights Reserved. Designed by 
-                                    <a className="text-white border-bottom" href="https://htmlcodex.com"> HTML Codex</a>
+                                    . Todos los derechos reservados. 
+                                    {/* Designed by <a className="text-white border-bottom" href="https://htmlcodex.com"> HTML Codex</a> */}
                                 </p>
                                 <p className="mb-0">
-                                    <i>Distributed By: <a className="border-bottom" href="https://ding.com.ar" target="_blank">Ding</a></i>
+                                    <i>Powered By: <a className="border-bottom" href="https://ding.com.ar" target="_blank">Ding | Marketing & Development</a></i>
                                 </p>
                             </div>
                         </div>

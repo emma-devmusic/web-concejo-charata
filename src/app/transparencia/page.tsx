@@ -1,8 +1,12 @@
+'use client'
+import { Layout } from '../views/Layout';
 
 export default function TransparenciaPage() {
     return (
         <div>
-            <h1>Hello Page</h1>
+            <Layout title='Transparencia'>
+                <h1>Transparencia</h1>
+            </Layout>
         </div>
     );
 }

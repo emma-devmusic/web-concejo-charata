@@ -5,7 +5,6 @@ import Script from "next/script";
 import './lib/animate/animate.min.css'
 import './assets/styles/bootstrap.min.css'
 import './assets/styles/style.css'
-import { BackToTop, Navbar } from "./components";
 
 const nunito = Nunito({ subsets: ["latin"] });
 

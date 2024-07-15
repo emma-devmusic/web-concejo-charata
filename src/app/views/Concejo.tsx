@@ -1,21 +1,23 @@
 'use client'
 
-import { BackToTop, Content, Navbar, SidebarNavigation, SmallBanner } from "../components"
+import { BackToTop, ContentInformation, Navbar, SidebarNavConcejo, SmallBanner } from "../components"
+import { useState } from 'react';
+import { Layout } from "./Layout";
 
 export const Concejo = () => {
+
+    const [ isActive, setIsActive ] = useState(false);
+
     return (
         <div>
-            <Navbar />
-            <SmallBanner title="El Concejo" />
-            <BackToTop />
-            <div className="container py-5">
-                <div className="row g-5">
+            <Layout title="El Concejo">
+                <div className="row g-2">
                     <div className="col-lg-8">
-                        <Content/>
+                        <ContentInformation setIsActive={setIsActive}/>
                     </div>
-                    <SidebarNavigation />
+                    <SidebarNavConcejo isActive={isActive} setIsActive={setIsActive} />
                 </div>
-            </div>
+            </Layout>
         </div>
     )
 }

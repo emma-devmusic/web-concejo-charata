@@ -3,8 +3,8 @@
 import Image from "next/image"
 import image1 from '../../assets/img/concejo/logo-transparent.png';
 import image2 from '../../assets/img/concejo/logo-blue-transparent.png';
-import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react"
 import { Icon } from "@iconify/react/dist/iconify.js";
 import './navbar.css'
 
@@ -12,11 +12,10 @@ export const Navbar = () => {
 
     const ref = useRef<HTMLDivElement>(null);
     const [logoDark, setLogoDark] = useState(false)
-    // const [resize, setResize] = useState(window.innerWidth)
 
     
 
-    // useEffect( () => {
+    useEffect( () => {
         if(typeof window !== "undefined"){
             window.addEventListener("resize", () => {
                 if(window.innerWidth < 992) {
@@ -35,14 +34,14 @@ export const Navbar = () => {
                 }
             })
         }
-    // }, [window.innerWidth, window.scrollY])
+    }, [])
 
 
     
 
     return (
         <>
-            <nav className={`navbar navbar-expand-lg navbar-dark px-3 py-1 py-lg-0 px-lg-5 position-sticky`} ref={ref}>
+            <nav className={`navbar navbar-expand-lg navbar-dark px-3 py-1 py-lg-0 px-lg-5 `} ref={ref}>
                 <Link href="/" className="navbar-brand p-0">
                     {
                         logoDark 
@@ -67,13 +66,14 @@ export const Navbar = () => {
                         <div className="nav-item dropdown">
                             <div className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sesiones del Concejo</div>
                             <div className="dropdown-menu m-0">
-                                <a href="price.html" className="dropdown-item">Pricing Plan</a>
-                                <a href="feature.html" className="dropdown-item">Our features</a>
+                                <Link href="/sesiones-del-concejo" className="dropdown-item">¿Qué Son Las Sesiones Del Concejo?</Link>
+                                <Link href="/informe-de-sesiones" className="dropdown-item">Informe de Sesiones</Link>
+                                <Link href="/orden-del-dia" className="dropdown-item">Orden Del Día</Link>
                             </div>
                         </div>
-                        <Link href="contact.html" className="nav-item nav-link no-wrap">Proyectos</Link>
-                        <Link href="contact.html" className="nav-item nav-link no-wrap">Ciudadanos</Link>
-                        <Link href="contact.html" className="nav-item nav-link no-wrap">Contacto</Link>
+                        <Link href="/comisiones" className="nav-item nav-link no-wrap">Comisiones</Link>
+                        {/* <Link href="contact.html" className="nav-item nav-link no-wrap">Ciudadanos</Link> */}
+                        <Link href="/contacto" className="nav-item nav-link no-wrap">Contacto</Link>
                     </div>
                     {/* <button type="button" className="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><Icon icon={'material-symbols:search'} className="fs-3"/></button> */}
                 </div>

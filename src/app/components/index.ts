@@ -12,5 +12,6 @@ export * from './footer/Footer';
 export * from './banner/Banner';
 export * from './smallBanner/SmallBanner';
 export * from './BackToTop';
-export * from './content/Content';
-export * from './sidebar/SidebarNavigation';
+export * from './content/ContentInformation';
+export * from './sidebar/SidebarNavConcejo';
+export * from './sidebar/SidebarNavSesiones';

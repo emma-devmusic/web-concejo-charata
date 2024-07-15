@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from "react";
-import { HomeView } from './views/HomeView'
+import { Facts, AboutUs, Features, Services, ContactUs, Team, BlogPosts, Footer, Navbar, BackToTop, Banner } from "./components";
 import Loading from "./loading";
 
 
@@ -16,8 +16,18 @@ export default function Home() {
 
   if (!show) return <Loading />
   return (
-    <>
-      <HomeView />
-    </>
+    <div >
+      <Navbar />
+      <Banner />
+      <Facts />
+      <AboutUs />
+      <Features />
+      <Services />
+      <ContactUs />
+      {/* <Team /> */}
+      <BlogPosts />
+      <Footer />
+      <BackToTop />
+    </div>
   )
 }

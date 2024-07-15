@@ -162,7 +162,7 @@ h6,
 @media (max-width: 991.98px) {
     .sticky-top.navbar-dark {
         position: relative;
-        background: #FFFFFF;
+        background: #ffffff7c;
     }
 
     .navbar-dark .navbar-nav .nav-link,
@@ -189,7 +189,7 @@ h6,
 
     .sticky-top.navbar-dark {
         position: fixed;
-        background: #FFFFFF;
+        background: #ffffff80;
     }
 
     .navbar-dark .navbar-nav .nav-link::before {
@@ -450,11 +450,15 @@ h6,
 }
 
 .team-item:hover {
-    box-shadow: 0 0 30px #DDDDDD;
+    box-shadow: 0 0 30px #b9b9b9;
 }
 
 .team-item:hover .team-social {
     background: rgba(9, 30, 62, .7);
+}
+
+#concejal-page .team-item:hover {
+    background: rgba(41, 60, 90, 0);
 }
 
 .team-item:hover .team-social a.btn:first-child {

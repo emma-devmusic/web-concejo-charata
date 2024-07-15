@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js"
+import Link from "next/link"
 
 export const Services = () => {
     return (
@@ -8,8 +9,11 @@ export const Services = () => {
                 <h5 className="fw-bold text-primary text-uppercase">El Concejo</h5>
                 <h1 className="mb-0">Más Información Sobre Nosotros y Nuestros Objetivos</h1>
             </div>
-            <div className="row g-5">
-                <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+            <div className="row g-5" style={{
+                maxWidth: '1000px',
+                margin: '0 auto'
+            }}>
+                <div className="col-md-6 wow zoomIn" data-wow-delay="0.3s">
                     <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div className="service-icon">
                             <Icon icon={'mdi:clipboard-text-history'} className='text-white' style={{
@@ -20,12 +24,12 @@ export const Services = () => {
                         </div>
                         <h4 className="mb-3">Concejales</h4>
                         <p className="m-0">Conoce quienes integran el cuerpo del Concejo del Municipio de Charata.</p>
-                        <a className="btn btn-lg btn-primary rounded" href="">
+                        <Link className="btn btn-lg btn-primary rounded" href="/concejales">
                             <Icon icon={'maki:arrow'} className='text-white' />
-                        </a>
+                        </Link>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                <div className="col-md-6 wow zoomIn" data-wow-delay="0.6s">
                     <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div className="service-icon">
                             <Icon icon={'eos-icons:project'} className='text-white' style={{
@@ -34,14 +38,14 @@ export const Services = () => {
                                 height: '20px'
                             }}/>
                         </div>
-                        <h4 className="mb-3">Proyectos y Orden del Día</h4>
+                        <h4 className="mb-3">Orden del Día</h4>
                         <p className="m-0">Te mostramos los temas a tratar en el día. Y te contamos sobre los proyectos a futuro.</p>
-                        <a className="btn btn-lg btn-primary rounded" href="">
+                        <Link className="btn btn-lg btn-primary rounded" href="/orden-del-dia">
                             <Icon icon={'maki:arrow'} className='text-white' />
-                        </a>
+                        </Link>
                     </div>
                 </div>
-                <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                {/* <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
                     <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div className="service-icon">
                             <Icon icon={'icon-park-outline:search'} className='text-white' style={{
@@ -52,11 +56,11 @@ export const Services = () => {
                         </div>
                         <h4 className="mb-3">Información y Transparencia</h4>
                         <p className="m-0">Informate sobre nuestros sueldos y presupuestos de proyectos. Toda la información abierta al público.</p>
-                        <a className="btn btn-lg btn-primary rounded" href="">
+                        <Link className="btn btn-lg btn-primary rounded" href="/transparencia">
                             <Icon icon={'maki:arrow'} className='text-white' />
-                        </a>
+                        </Link>
                     </div>
-                </div>
+                </div> */}
                 {/* <div className="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
                     <div className="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div className="service-icon">
