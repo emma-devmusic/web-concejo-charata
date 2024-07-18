@@ -11,7 +11,8 @@ export const concejales: Concejal[] = [
         block: "Juntos Por El Cambio",
         instagram: 'https://www.instagram.com/alejandrobarcala.ucr',
         description: 'Alejandro Juan José Barcala es el Presidente del Concejo de Charata, representando al bloque Juntos Por El Cambio. Con una destacada trayectoria, Alejandro lidera el concejo con dedicación y compromiso hacia el desarrollo y bienestar de la comunidad. Puedes seguir su labor y actividades en su Instagram.',
-        email: 'alejandrobarcala22@gmail.com'
+        email: 'alejandrobarcala22@gmail.com',
+        details: ['']
     },
     {
         id: 4,
@@ -22,7 +23,8 @@ export const concejales: Concejal[] = [
         block: "Juntos Por El Cambio",
         instagram: 'https://www.instagram.com/carabajal_rene_',
         description: 'Ángel René Carabajal es Concejal del bloque Juntos Por El Cambio. Con un fuerte enfoque en mejorar la calidad de vida de los ciudadanos, Ángel trabaja incansablemente en proyectos que buscan el progreso y desarrollo de Charata. Síguelo en Instagram para conocer más sobre su trabajo.',
-        email: 'angelrenecarabajal@gmail.com'
+        email: 'angelrenecarabajal@gmail.com',
+        details: ['']
     },
     {
         id: 5,
@@ -33,7 +35,8 @@ export const concejales: Concejal[] = [
         block: "Juntos Por El Cambio",
         instagram: 'https://www.instagram.com/luciana.guilana2023',
         description: 'Luciana Evelin Guilaña, Concejal del bloque Juntos Por El Cambio, se dedica a defender los derechos y servicios para los vecinos de Charata. Su compromiso y esfuerzo se reflejan en cada una de sus iniciativas. Conéctate con Luciana a través de su Instagram.',
-        email: 'lucianaguilana@gmail.com'
+        email: 'lucianaguilana@gmail.com',
+        details: ['']
     },
     {
         id: 7,
@@ -44,7 +47,8 @@ export const concejales: Concejal[] = [
         block: "Juntos Por El Cambio",
         instagram: 'https://www.instagram.com/marcelospahn.concejal',
         description: 'Marcelo Elbio Spahn es Concejal por Juntos Por El Cambio. Marcelo se destaca por su trabajo en proyectos que buscan el desarrollo integral de la ciudad y el bienestar de sus habitantes. Sigue sus actividades y logros en su Instagram.',
-        email: 'marceloespahn@hotmail.com'
+        email: 'marceloespahn@hotmail.com',
+        details: ['Comerciante agrícola: inició su propio negocio en el mismo rubro, aprovechando su amplia experiencia y conocimiento del sector.', 'En 2015, motivado por su disconformidad con las políticas públicas vigentes y con la convicción de que la única manera de generar un cambio real era involucrarse, decidió participar activamente en la política.', 'Comenzó como colaborador en el partido PRO (Propuesta Republicana) y, tras la formación de la coalición Cambiemos, se unió a los esfuerzos conjuntos con los partidos que la integran, ahora conocida como Juntos por el Cambio.']
     },
     {
         id: 8,
@@ -55,7 +59,8 @@ export const concejales: Concejal[] = [
         block: "Juntos Por El Cambio",
         instagram: 'https://www.instagram.com/analiafarias23',
         description: 'Analía Marisel Farias, Concejal de Juntos Por El Cambio, está dedicada a las mejoras comunitarias y al servicio de la ciudadanía. Con una visión clara y un fuerte sentido de responsabilidad, Analía trabaja incansablemente por el bien de Charata. Puedes seguir su labor en Instagram.',
-        email: 'analiamariself@gmail.com'
+        email: 'analiamariself@gmail.com',
+        details: ['Comerciante.', 'Desde aproximadamente 2015, comenzó su trayectoria en la política participando en elecciones y realizando labores de fiscalización.', 'Independientemente, se dedica a la asistencia social, colaborando con personas en situación de vulnerabilidad para mejorar su calidad de vida.', 'Trabajó en diversos proyectos comunitarios para brindar apoyo a quienes más lo necesitan.', 'Su verdadero interés en la política nació al combinar estas dos pasiones: el compromiso con su comunidad y el deseo de generar un cambio positivo.']
     },
     {
         id: 1,
@@ -66,7 +71,8 @@ export const concejales: Concejal[] = [
         block: "Frente Chaqueño",
         instagram: 'https://www.instagram.com/silviaoger',
         description: 'Silvia Mabel Oger es Concejal del Frente Chaqueño. Con un firme compromiso hacia la justicia social y el desarrollo local, Silvia se dedica a representar a sus conciudadanos de manera eficaz y transparente. Conéctate con ella a través de su Instagram.',
-        email: 'silviamabeloger@yahoo.com.ar'
+        email: 'silviamabeloger@yahoo.com.ar',
+        details: ['']
     },
     {
         id: 2,
@@ -77,7 +83,8 @@ export const concejales: Concejal[] = [
         block: "Frente Chaqueño",
         instagram: 'https://www.instagram.com/pao.gauna.concejal',
         description: 'Paola Edit Gauna, Concejal del Frente Chaqueño, se enfoca en mejorar los servicios públicos y representar de manera efectiva a la comunidad de Charata. Su dedicación y esfuerzo son evidentes en cada una de sus iniciativas. Síguela en Instagram.',
-        email: 'paolae_g@hotmail.com'
+        email: 'paolae_g@hotmail.com',
+        details: ['']
     },
     {
         id: 3,
@@ -88,7 +95,8 @@ export const concejales: Concejal[] = [
         block: "Frente Chaqueño",
         instagram: 'https://www.instagram.com/nestorlorenzin',
         description: 'Néstor Javier Lorenzin es Concejal del Frente Chaqueño. Con un enfoque en el bienestar y progreso de los habitantes de Charata, Néstor trabaja diligentemente para crear un entorno mejor y más justo. Puedes seguir su trabajo en Instagram.',
-        email: 'nestorlorenzin@hotmail.com'
+        email: 'nestorlorenzin@hotmail.com',
+        details: ['']
     },
     {
         id: 6,
@@ -99,7 +107,8 @@ export const concejales: Concejal[] = [
         block: "Frente Chaqueño",
         instagram: 'https://www.instagram.com/carlosfedorchuk',
         description: 'Carlos Roberto Fedorchuk, Concejal del Frente Chaqueño, se dedica a la mejora de los servicios y derechos de la comunidad. Su trabajo incansable y su compromiso con los ciudadanos son notables. Síguelo en Instagram para conocer más sobre su labor.',
-        email: 'carlos_fedorchuk@hotmail.com'
+        email: 'carlos_fedorchuk@hotmail.com',
+        details: ['']
     },
 ];
 

@@ -60,19 +60,21 @@ export const Navbar = () => {
                             <div className="dropdown-menu m-0">
                                 <Link href={'/concejo-del-municipio'} className="dropdown-item">Concejo del Municipio </Link>
                                 <Link href={'/concejales'} className="dropdown-item">Concejales</Link>
-                                <Link href={'/transparencia'} className="dropdown-item">Transparencia</Link>
+                                <Link href="/comisiones" className="dropdown-item">Comisiones</Link>
+
+                                {/* <Link href={'/transparencia'} className="dropdown-item">Transparencia</Link> */}
                             </div>
                         </div>
                         <div className="nav-item dropdown">
                             <div className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Sesiones del Concejo</div>
                             <div className="dropdown-menu m-0">
                                 <Link href="/sesiones-del-concejo" className="dropdown-item">¿Qué Son Las Sesiones Del Concejo?</Link>
-                                <Link href="/informe-de-sesiones" className="dropdown-item">Informe de Sesiones</Link>
+                                <Link href="/informe-de-sesiones" className="dropdown-item">Resúmenes de Sesiones</Link>
                                 <Link href="/orden-del-dia" className="dropdown-item">Orden Del Día</Link>
                             </div>
                         </div>
-                        <Link href="/comisiones" className="nav-item nav-link no-wrap">Comisiones</Link>
-                        {/* <Link href="contact.html" className="nav-item nav-link no-wrap">Ciudadanos</Link> */}
+                        <Link href="/legislacion" className="nav-item nav-link no-wrap">Legislación</Link>
+                        <Link href="/shares" className="nav-item nav-link no-wrap">Participación</Link>
                         <Link href="/contacto" className="nav-item nav-link no-wrap">Contacto</Link>
                     </div>
                     {/* <button type="button" className="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><Icon icon={'material-symbols:search'} className="fs-3"/></button> */}

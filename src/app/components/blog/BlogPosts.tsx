@@ -4,6 +4,8 @@ import blog2 from '../../assets/img/blog-2.jpg';
 import blog3 from '../../assets/img/blog-3.jpg';
 
 export const BlogPosts = () => {
+
+
     return (
         <div className="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
             <div className="container py-5">

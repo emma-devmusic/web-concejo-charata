@@ -12,7 +12,7 @@ export const Layout = ({ children, title }: Props) => {
             <Navbar />
             <SmallBanner title={title} />
             <BackToTop />
-            <div className="container py-5">
+            <div className="container py-3">
                 {children}
             </div>
             <Footer />

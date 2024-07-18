@@ -32,19 +32,25 @@ export default function ConcejalPage() {
                                 <strong>{profile.block}</strong>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-md-6 mt-5 mt-md-0 wow slideInUp" data-wow-delay="0.3s">
-                        <h3>{profile.name}</h3>
-                        <hr />
-                        <p className="fs-6">{profile.description}</p>
                         <div className="mt-5">
                             <div className="d-flex justify-content-between">
                                 <strong>Contacto</strong>
                             </div>
                             <hr />
                             <Link href={profile.instagram} target="_blank" className="text-danger"><Icon icon={'bi:instagram'} /> Instagram</Link>
-                            <span className="d-block mt-1"> <Icon icon={'ic:baseline-email'} /> <i>{profile.email}</i></span>
+                            <span className="d-block mt-1"> <Icon icon={'ic:baseline-email'} /> {profile.email}</span>
                         </div>
+                    </div>
+                    <div className="col-md-6 mt-5 mt-md-0 wow slideInUp" data-wow-delay="0.3s">
+                        <h3>{profile.name}</h3>
+                        <hr />
+                        {
+                            profile.details.map((e, i) =>
+                                <p key={i}>{e}</p>
+                            )
+                        }
+                        <p className="fs-6">{profile.description}</p>
+
                     </div>
                     <Features />
 

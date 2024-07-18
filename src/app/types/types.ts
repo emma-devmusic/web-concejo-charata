@@ -9,6 +9,7 @@ export interface Concejal {
     instagram: string;
     description: string;
     email: string;
+    details: string[];
 }
 
 export interface ImageObject {
@@ -18,4 +19,19 @@ export interface ImageObject {
     height: number;
     src: string;
     width: number;
+}
+
+export interface Blog {
+    id: string;
+    data: DataBlog
+}
+
+export interface DataBlog {
+    html: string;
+    date: Date;
+    issue: string;
+    title: string;
+    creator: string;
+    description: string;
+    id: string;
 }
