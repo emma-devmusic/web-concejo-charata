@@ -1,4 +1,5 @@
 'use client'
+
 import { useEffect, useState } from "react";
 import Shares from "../views/Shares";
 import { Blog } from "../types";
@@ -8,7 +9,7 @@ export default function InformeSesionesPage() {
     const [blogs, setBlogs] = useState<Blog[]>([])
 
     useEffect(() => {
-        fetch('/api/sessions')
+        fetch('/api/sessions', { next: { revalidate: 3600 } })
             .then(resp => resp.json())
             .then(data => setBlogs(data))
     }, [])
