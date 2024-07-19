@@ -1,6 +1,7 @@
 import { getBlogByIdFromDB } from "@/services/blogs"
 
 export async function GET(
+    res: Response, req: Request,
     { params }: { params: { id: string } }
 ) {
     try {
