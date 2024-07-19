@@ -2,9 +2,33 @@
 
 .slick-next {
     /* display: none !important; */
-    transform: translate(-50px,20px);
+    /* transform: translate(-50px,20px); */
 }
 
 .slick-prev {
     /* transform: translateX(50px); */
+}
+
+.button-banner {
+    width: 100%;
+    max-width: 189px;
+}
+
+
+@media (max-width: 992px) {
+    .logo-banner {
+        max-width: 80% !important;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+    }    
+}
+
+
+@media (max-width: 768px) {
+    .button-banner {
+        width: 100%;
+        max-width: 117px;
+        text-align: center;
+        transform: translateY(50px) !important;
+    }
 }

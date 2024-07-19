@@ -9,7 +9,7 @@ import './assets/styles/style.css'
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Consejo Charata",
+  title: "Concejo Charata",
   description: "Sitio web del Concejo de la municipalidad de Charata, Chaco, Argentina",
   keywords: ['consejo'],
 };

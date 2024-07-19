@@ -24,7 +24,7 @@ export const ContentConcejales = () => {
                     <strong>Frente Chaqueño</strong>: Este bloque trabaja bajo los lineamientos y propuestas del partido Frente Chaqueño, enfocándose en políticas de desarrollo local, inclusión social y mejora de los servicios públicos.
                 </li>
                 <li>
-                    <strong>Juntos Por El Cambio</strong>: Este bloque representa las ideas y objetivos del partido Juntos Por El Cambio, abogando por la transparencia, eficiencia en la gestión pública y el fomento de iniciativas que impulsen el crecimiento económico de la ciudad.
+                    <strong>Juntos Por El Cambio</strong>: Este bloque representa las ideas y objetivos de la <strong>alianza</strong> de los partidos Juntos Por El Cambio y la <strong>UCR (Unión Cívica Radical)</strong>, abogandos por la transparencia, eficiencia en la gestión pública y el fomento de iniciativas que impulsen el crecimiento económico de la ciudad.
                 </li>
             </ul>
             <p>

@@ -39,13 +39,13 @@ export const Banner = () => {
                             <div className="p-3" style={{ maxWidth: "900px" }}>
                                 {/* <h5 className="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5> */}
                                 <h2 className="display-1 text-white mb-md-4 animated zoomIn">
-                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" style={{
+                                    <Image id="" src={logo} width={600} height={275} className="logo-1 w-100 h-100 logo-banner" alt="logo" style={{
                                         maxWidth: '500px',
                                         height: 'auto'
                                     }} />
                                 </h2>
-                                <a href="quote.html" className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Noticias</a>
-                                <a href="" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contactános</a>
+                                <a href="/shares" className="btn btn-primary py-md-3 px-md-5 me-2 animated slideInLeft button-banner">Noticias</a>
+                                <a href="/contactanos" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight button-banner">Contactános</a>
                             </div>
                         </div>
                     </div>
@@ -63,13 +63,13 @@ export const Banner = () => {
                             <div className="p-3" style={{ maxWidth: "900px" }}>
                                 {/* <h5 className="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5> */}
                                 <h1 className="display-1 text-white mb-md-4 animated zoomIn">
-                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" style={{
+                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100 logo-banner" alt="logo" style={{
                                         maxWidth: '500px',
                                         height: 'auto'
                                     }} />
                                 </h1>
-                                <a href="quote.html" className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Noticias</a>
-                                <a href="" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contactános</a>
+                                <a href="/shares" className="btn btn-primary py-md-3 px-md-5 me-2 animated slideInLeft button-banner">Noticias</a>
+                                <a href="/contactanos" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight button-banner">Contactános</a>
                             </div>
                         </div>
                     </div>
@@ -87,13 +87,13 @@ export const Banner = () => {
                             <div className="p-3" style={{ maxWidth: "900px" }}>
                                 {/* <h5 className="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5> */}
                                 <h1 className="display-1 text-white mb-md-4 animated zoomIn">
-                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100" alt="logo" style={{
+                                    <Image src={logo} width={600} height={275} className="logo-1 w-100 h-100 logo-banner" alt="logo" style={{
                                         maxWidth: '500px',
                                         height: 'auto'
                                     }} />
                                 </h1>
-                                <a href="quote.html" className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Noticias</a>
-                                <a href="" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contactános</a>
+                                <a href="/shares" className="btn btn-primary py-md-3 px-md-5 me-2 animated slideInLeft button-banner">Noticias</a>
+                                <a href="/contactanos" className="btn btn-outline-light py-md-3 px-md-5 animated slideInRight button-banner">Contactános</a>
                             </div>
                         </div>
                     </div>
