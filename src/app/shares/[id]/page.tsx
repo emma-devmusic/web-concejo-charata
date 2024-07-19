@@ -1,45 +1,52 @@
 'use client'
-import { Blog, DataBlog } from "@/app/types";
+import { DataBlog } from "@/app/types";
 import { Layout } from "@/app/views/Layout";
 import { useEffect, useState, useRef } from 'react';
-import { getBlogById } from "./layout";
 import Loading from "@/app/loading";
+import { SidebarBlog } from "@/app/components/sidebar/SidebarBlog";
+import { getBlogByIdFromDB } from "@/services/blogs";
 import './styles.css'
+
+
 interface Props {
     params: { id: string; }
 }
 
+
+
 export default function BlogPage({ params }: Props) {
 
+    const [blogState, setBlogState] = useState<DataBlog | null>(null)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    const [blogState, setBlogState] = useState<DataBlog>({ } as DataBlog)
-    const [ isLoading, setIsLoading ] = useState<boolean>(false)
-    
     const htmlRef = useRef<HTMLDivElement>(null)
-    
+
     useEffect(() => {
         setIsLoading(true)
-        getBlogById(params.id)
-        .then(
-            resp => {
-                setBlogState( resp )
+        getBlogByIdFromDB(params.id)
+            .then(
+                (resp:any) => {
+                    setBlogState(resp.data)
+                    setIsLoading(false)
+                }
+            )
+            .catch(err => {
                 setIsLoading(false)
-                
-            }
-        )
+            })
     }, [])
 
     useEffect(() => {
-        console.log(blogState.html)
-        if(htmlRef.current && blogState) htmlRef.current.innerHTML = blogState.html
-    },[blogState])
+        if (htmlRef.current && blogState && typeof blogState !== 'string') htmlRef.current.innerHTML = blogState.html
+    }, [blogState])
 
-    if(isLoading && !!blogState) return <Loading />
+    if (isLoading) return <Loading />
+    if(!blogState) return <Layout title={'UPS!'}><h2>No Existe Blog</h2></Layout>
 
     return (
         <Layout title={blogState.title}>
-            <div ref={htmlRef} id='blog-html'>
-
+            <div className="row">
+                <div ref={htmlRef} id='blog-html' className="col-lg-8"></div>
+                <SidebarBlog />
             </div>
         </Layout>
     );

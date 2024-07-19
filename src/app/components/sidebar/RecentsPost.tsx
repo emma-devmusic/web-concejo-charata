@@ -1,25 +1,49 @@
-import Image from "next/image";
-import Link from "next/link";
 
-export const RecentPosts = () => (
-    <div className="mb-5 wow slideInUp" data-wow-delay="0.1s">
-        <div className="section-title section-title-sm position-relative pb-3 mb-4">
-            <h3 className="mb-0">Publicaciones Recientes</h3>
-        </div>
-        {[
-            { src: '/assets/img/concejales/analia-marisel-farias.jpeg', alt: 'Imagen del concejo', text: 'Lorem ipsum dolor sit amet adipis elit' },
-            { src: '/assets/img/concejales/analia-marisel-farias.jpeg', alt: 'Imagen del concejo', text: 'Lorem ipsum dolor sit amet adipis elit' },
-            { src: '/assets/img/concejales/analia-marisel-farias.jpeg', alt: 'Imagen del concejo', text: 'Lorem ipsum dolor sit amet adipis elit' },
-            { src: '/assets/img/concejales/analia-marisel-farias.jpeg', alt: 'Imagen del concejo', text: 'Lorem ipsum dolor sit amet adipis elit' },
-            { src: '/assets/img/concejales/analia-marisel-farias.jpeg', alt: 'Imagen del concejo', text: 'Lorem ipsum dolor sit amet adipis elit' },
-            { src: '/assets/img/concejales/analia-marisel-farias.jpeg', alt: 'Imagen del concejo', text: 'Lorem ipsum dolor sit amet adipis elit' },
-        ].map((post, index) => (
-            <div className="d-flex rounded overflow-hidden mb-3" key={index}>
-                <Image className="img-fluid" width={100} height={100} src={post.src} style={{ width: '100px', height: '100px', objectFit: 'cover' }} alt={post.alt} />
-                <Link href="/noticias" className="h5 fw-semi-bold d-flex align-items-center bg-light px-3 mb-0">
-                    {post.text}
-                </Link>
+import { MiniCardBlog } from "../blog/MiniCardBlog";
+import { Blog } from "@/app/types";
+import { useEffect, useState } from "react";
+import Loading from "@/app/loading";
+
+export const RecentPosts = () => {
+
+    const [miniBlogs, setMiniBlogs] = useState([])
+    const [ loading, setLoading ] = useState(false)
+    const getBlogs = async() => {
+        try {
+            setLoading(true)
+            const blogs = await fetch('http://localhost:3000/api/blogs');
+            const data = await blogs.json()
+            return data;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        getBlogs()
+            .then( resp=> {
+                setMiniBlogs(resp)
+                setLoading(false)
+            } )
+            .catch(err => {
+                setLoading(false)
+                alert(err)
+            })
+    }, [])
+    
+
+    return (
+        <div className="mb-5 wow slideInUp" data-wow-delay="0.1s">
+            <div className="section-title section-title-sm position-relative pb-3 mb-4">
+                <h3 className="mb-0">Publicaciones Recientes</h3>
             </div>
-        ))}
-    </div>
-);
+            {
+                loading 
+                ? <p>Cargando posts...</p>
+                : miniBlogs.map(
+                    (blog: Blog, i: number) => <MiniCardBlog blogData={blog} key={i} />
+                )
+            }
+        </div>
+    );
+}

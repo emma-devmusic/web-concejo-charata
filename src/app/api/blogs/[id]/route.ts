@@ -1,8 +1,13 @@
 import { getBlogByIdFromDB } from "@/services/blogs"
-import { NextRequest } from "next/server"
 
-export async function GET( req: NextRequest, {params}: {params:{ id: string }} ) {
-   
-    const blog = await getBlogByIdFromDB(params.id)
-    return Response.json(blog)
+export async function GET(
+    req: Request, res: Response,
+    { params }: { params: { id: string } }
+) {
+    try {
+        const blog = await getBlogByIdFromDB(params.id)
+        return Response.json(blog)
+    } catch (error) {
+        return Response.json({ message: 'No existe el blog' })
+    }
 }

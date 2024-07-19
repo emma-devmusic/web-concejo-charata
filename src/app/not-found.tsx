@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { Layout } from './views/Layout'
 
-export default async function NotFound() {
+export default function NotFound() {
   return (
     <div>
       <Layout title='404 | Página No Encontrada'>

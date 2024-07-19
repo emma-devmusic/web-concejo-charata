@@ -9,13 +9,13 @@ interface Props {
 }
 
 
-export const SidebarNavConcejo = ({isActive, setIsActive}: Props) => {
+export const SidebarNavConcejo = ({ isActive, setIsActive }: Props) => {
     return (
         <div className="col-lg-4">
             <div className="mb-5 wow slideInUp" data-wow-delay="0.1s" style={{
-            position: 'sticky',
-            top: '100px'
-        }}>
+                position: 'sticky',
+                top: '100px'
+            }}>
                 <div className="section-title section-title-sm position-relative pb-3 mb-4">
                     <h3 className="mb-0">Navegación</h3>
                 </div>

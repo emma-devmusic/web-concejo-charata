@@ -1,9 +1,33 @@
 'use client'
+
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Layout } from '../views/Layout';
+import { useForm } from '../hooks/useForm';
+import Swal from 'sweetalert2';
 
 
 export default function ContactoPage() {
+
+    const [values, handleInputChange, reset] = useForm({
+        name: '',
+        email: '',
+        issue: '',
+        msg: ''
+    })
+
+    const handleSendEmail = async (e: any) => {
+        e.preventDefault()
+        const res = await fetch('/api/send', { method: 'POST', body: JSON.stringify(values) })
+        const data = await res.json()
+        if(!data.error){
+            Swal.fire('Mensaje Enviado', `${data.message}`, 'success')
+            reset()
+        } else {
+            Swal.fire('Error', 'El mensaje no pudo ser enviado', 'error')
+        }
+    }
+
+
     return (
         <div>
             <Layout title='Contacto'>
@@ -59,22 +83,22 @@ export default function ContactoPage() {
                         </div>
                         <div className="row g-5">
                             <div className="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                                <form>
+                                <form onSubmit={handleSendEmail}>
                                     <div className="row g-3">
                                         <div className="col-md-6">
-                                            <input type="text" className="form-control border-0 bg-light px-4" placeholder="Nombre" style={{ height: '55px' }} />
+                                            <input value={values.name} onChange={handleInputChange} name='name' type="text" className="form-control border-0 bg-light px-4" placeholder="Nombre" style={{ height: '55px' }} />
                                         </div>
                                         <div className="col-md-6">
-                                            <input type="email" className="form-control border-0 bg-light px-4" placeholder="Correo Electrónico" style={{ height: '55px' }} />
+                                            <input value={values.email} onChange={handleInputChange} name='email' type="email" className="form-control border-0 bg-light px-4" placeholder="Correo Electrónico" style={{ height: '55px' }} />
                                         </div>
                                         <div className="col-12">
-                                            <input type="text" className="form-control border-0 bg-light px-4" placeholder="Asunto" style={{ height: '55px' }} />
+                                            <input value={values.issue} onChange={handleInputChange} name='issue' type="text" className="form-control border-0 bg-light px-4" placeholder="Asunto" style={{ height: '55px' }} />
                                         </div>
                                         <div className="col-12">
-                                            <textarea className="form-control border-0 bg-light px-4 py-3" rows={4} placeholder="Mensaje"></textarea>
+                                            <textarea value={values.msg} onChange={handleInputChange} name='msg' className="form-control border-0 bg-light px-4 py-3" rows={4} placeholder="Mensaje"></textarea>
                                         </div>
                                         <div className="col-12">
-                                            <button className="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                            <button className="btn btn-primary w-100 py-3" type="submit">Enviar</button>
                                         </div>
                                     </div>
                                 </form>
@@ -88,7 +112,7 @@ export default function ContactoPage() {
                                     aria-hidden="false"
                                     tabIndex={0}
                                 ></iframe>
-                               </div>
+                            </div>
                         </div>
                     </div>
                 </div>

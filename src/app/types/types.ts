@@ -27,11 +27,14 @@ export interface Blog {
 }
 
 export interface DataBlog {
+    category: string;
+    image: string;
     html: string;
-    date: Date;
+    date: string;
     issue: string;
     title: string;
     creator: string;
     description: string;
     id: string;
 }
+

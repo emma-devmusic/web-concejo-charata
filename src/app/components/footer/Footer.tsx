@@ -11,9 +11,7 @@ export const Footer = () => {
                     <div className="row gx-5">
                         <div className="col-lg-4 col-md-6">
                             <div className="d-flex flex-column align-items-center justify-content-center text-center bg-primary p-4 h-100">
-
-                                <p className="mt-3 mb-4"> Nos esforzamos por ser un órgano transparente, inclusivo y responsable, comprometido con la participación ciudadana y la toma de decisiones que reflejen las necesidades y aspiraciones de todos los charatenses.</p>
-                              
+                                <p className="mt-3 mb-4">Nos esforzamos por ser un órgano transparente, inclusivo y responsable, comprometido con la participación ciudadana y la toma de decisiones que reflejen las necesidades y aspiraciones de todos los charatenses.</p>
                             </div>
                         </div>
                         <div className="col-lg-8 col-md-6">
@@ -32,11 +30,11 @@ export const Footer = () => {
                                     </div>
                                     <div className="d-flex align-items-center mb-2">
                                         <Icon className='me-1' icon={'ic:round-phone'} />
-                                        <p className="mb-0">+012 345 6789</p>
+                                        <p className="mb-0">3731 62-5581</p>
                                     </div>
                                     <div className="d-flex mt-4">
-                                        <Link className="btn btn-primary btn-square me-2" href="#"><Icon icon="ri:facebook-fill" /></Link>
-                                        <Link className="btn btn-primary btn-square" href="#"><Icon icon="mdi:instagram" /></Link>
+                                        <Link className="btn btn-primary btn-square me-2" href="https://www.facebook.com/concejocharata" target='_blank'><Icon icon="ri:facebook-fill" /></Link>
+                                        <Link className="btn btn-primary btn-square" href="https://www.instagram.com/concejocharata/" target='_blank'><Icon icon="mdi:instagram" /></Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
@@ -44,12 +42,12 @@ export const Footer = () => {
                                         <h3 className="text-light mb-0">Enlaces</h3>
                                     </div>
                                     <div className="link-animated d-flex flex-column justify-content-start">
-                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Home</Link>
-                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />About Us</Link>
-                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Our Services</Link>
-                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Meet The Team</Link>
-                                        <Link className="text-light mb-2" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Latest Blog</Link>
-                                        <Link className="text-light" href="#"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Contact Us</Link>
+                                        <Link className="text-light mb-2" href="/concejales"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Concejales</Link>
+                                        <Link className="text-light mb-2" href="/comisiones"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Comisiones</Link>
+                                        <Link className="text-light mb-2" href="/legislacion"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Legislación</Link>
+                                        <Link className="text-light mb-2" href="/shares"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Participación</Link>
+                                        <Link className="text-light mb-2" href="/informe-de-sesiones"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Sesiones</Link>
+                                        <Link className="text-light" href="/contacto"><Icon icon="material-symbols-light:line-end-arrow" className="me-2 text-primary" />Contacto</Link>
                                     </div>
                                 </div>
                                 <div className="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">

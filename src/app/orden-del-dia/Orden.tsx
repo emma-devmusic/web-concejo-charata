@@ -24,7 +24,7 @@ export const Orden = ({id, month, ordersList}: Order) => {
             <div id={`collapse${id}`} className="accordion-collapse collapse" aria-labelledby={`heading${id}`} data-bs-parent="#accordionExample">
                 <div className="accordion-body d-flex flex-column align-items-start gap-2">
                     {
-                        ordersList.map( e => <a href={`/ordenes/${e.path}.pdf`} target="_blank">{e.name} - {e.date}</a> )
+                        ordersList.map( (e,i) => <a href={`/ordenes/${e.path}.pdf`} target="_blank" key={i}>{e.name} - {e.date}</a> )
                     }
                 </div>
             </div>

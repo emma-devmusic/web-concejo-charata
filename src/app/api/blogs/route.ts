@@ -1,9 +1,25 @@
-import { getBlogByIdFromDB, getterBlogFromDB } from "@/services/blogs"
-import { NextRequest } from "next/server"
+import { getSomeBlogsFromDB, getterBlogFromDB } from "@/services/blogs"
 
-export async function GET( req: NextRequest ) {
+export async function GET( ) {
    
+    try {
+        const blogs = await getterBlogFromDB('concejo-charata')
+        return Response.json(blogs)
+    } catch (error) {
+        return Response.json({ message: 'Error al cargar archivos' })
+    }
 
-    const blogs = await getterBlogFromDB('concejo-charata')
-    return Response.json(blogs)
+}
+
+
+export async function POST( request: Request ) {
+
+    const resp: { limit: number } = await request.json()
+
+    try {
+        const blogs = await getSomeBlogsFromDB(resp.limit)
+        return Response.json(blogs)
+    } catch (error) {
+        return Response.json({ message: 'Error al cargar archivos' })
+    }
 }

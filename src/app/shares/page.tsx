@@ -1,9 +1,15 @@
-
+'use client'
+import { useEffect, useState } from "react";
 import Shares from "../views/Shares";
+import { Blog } from "../types";
 
-export default async function SharesPage() {
+export default function SharesPage() {
+    const [someBlogs, setSomeBlogs] = useState<Blog[]>([])
 
-    const blogs = await fetch('http://localhost:3000/api/blogs');
-    const data = await blogs.json()
-    return <Shares blogs={data} />
+    useEffect(() => {
+        fetch('/api/blogs')
+            .then(resp => resp.json())
+            .then(data => setSomeBlogs(data))
+    }, [])
+    return <Shares section="Noticias - Blogs" title="Enterate De Todas Las Participaciones del Concejo" blogs={someBlogs} />
 }
