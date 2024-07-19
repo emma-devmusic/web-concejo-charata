@@ -31,7 +31,7 @@ export const AboutUs = () => {
                             </div>
                             <div className="ps-4">
                                 <h5 className="mb-2">Comúnicate con nosotros</h5>
-                                <h4 className="text-primary mb-0">+012 345 6789</h4>
+                                <h4 className="text-primary mb-0">3731 62-5581</h4>
                             </div>
                         </div>
                         <Link href="" className="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Envíanos un Mensaje</Link>
