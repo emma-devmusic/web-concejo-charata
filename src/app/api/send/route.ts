@@ -14,8 +14,8 @@ export async function POST(request: Request) {
         const { data, error } = await resend.emails.send({
             from: 'Página Web del Concejo <onboarding@resend.dev>',
             // from: `${res.email}`,
-            // to: ['concejoch@gmail.com'],
-            to: ['ema.araujo.ea@gmail.com'],
+            to: ['concejoch@gmail.com'],
+            // to: ['ema.araujo.ea@gmail.com'],
             subject: res.issue,
             react: EmailTemplate({...res}),
             text: 'Todo el texto aquí'

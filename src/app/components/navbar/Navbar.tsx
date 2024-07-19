@@ -16,7 +16,11 @@ export const Navbar = () => {
     
 
     useEffect( () => {
+    
         if(typeof window !== "undefined"){
+            if(window.screen.width < 992) {
+                setLogoDark(true)
+            }
             window.addEventListener("resize", () => {
                 if(window.innerWidth < 992) {
                     setLogoDark(true)
