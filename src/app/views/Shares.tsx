@@ -34,7 +34,7 @@ const Shares = ({ blogs, title, section, withLayout = true}: Props) => {
 
     return (
         <Layout title="Noticias y Participación">
-            <div className="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+            <div className="container-fluid wow fadeInUp" >
                 <div className="container ">
                     <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{ maxWidth: "600px" }}>
                         <h5 className="fw-bold text-primary text-uppercase">{section}</h5>

@@ -1,12 +1,16 @@
-
+'use client'
+import { useEffect, useState } from "react";
 import Shares from "../views/Shares";
+import { Blog } from "../types";
 
-export default async function InformeSesionesPage() {
-    try {
-        const blogs = await fetch('http://localhost:3000/api/sessions');
-        const data = await blogs.json()
-        return <Shares section="Sesiones" title="Resúmenes de Sesiones del Concejo" blogs={data} />
-    } catch (error) {
-        return <h1>Error Al Cargar Archivos</h1>
-    }
+export default function InformeSesionesPage() {
+    
+    const [blogs, setBlogs] = useState<Blog[]>([])
+
+    useEffect(() => {
+        fetch('/api/sessions')
+            .then(resp => resp.json())
+            .then(data => setBlogs(data))
+    }, [])
+    return <Shares section="Noticias - Blogs" title="Enterate De Todas Las Participaciones del Concejo" blogs={blogs} />
 }

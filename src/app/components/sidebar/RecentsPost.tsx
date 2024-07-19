@@ -11,7 +11,7 @@ export const RecentPosts = () => {
     const getBlogs = async() => {
         try {
             setLoading(true)
-            const blogs = await fetch('http://localhost:3000/api/blogs');
+            const blogs = await fetch('/api/blogs');
             const data = await blogs.json()
             return data;
         } catch (error) {
