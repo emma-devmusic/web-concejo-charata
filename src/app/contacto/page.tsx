@@ -48,7 +48,7 @@ export default function ContactoPage() {
                                     </div>
                                     <div className="ps-4">
                                         <h5 className="mb-2">Escribenos al WhatsApp.</h5>
-                                        <h5 className="text-primary mb-0">+012 345 6789</h5>
+                                        <h5 className="text-primary mb-0">3731 62-5581</h5>
                                     </div>
                                 </div>
                             </div>
