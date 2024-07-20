@@ -1,21 +1,7 @@
 import Image from "next/image";
-import blog1 from '../../assets/img/blog-1.jpg';
 import { Blog } from "@/app/types";
-import { useEffect, useState } from 'react';
-import { Spinner } from "../spinner/Spinner";
 
 export const CardBlog = ({ blogData }: { blogData: Blog }) => {
-
-    // const [show, setShow] = useState(false)
-
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setShow(true)
-    //     }, 1000);
-    // }, [])
-
-    // if (!show) return  <div className='d-flex justify-content-center align-items-center' style={{ minHeight: '300px' }}> <Spinner /> </div>
-    // if (show)
         return (
             <div className="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
                 <div className="blog-item bg-light rounded overflow-hidden">
