@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Blog } from "@/app/types";
+import Link from "next/link";
 
 export const CardBlog = ({ blogData }: { blogData: Blog }) => {
         return (
@@ -26,7 +27,7 @@ export const CardBlog = ({ blogData }: { blogData: Blog }) => {
                         </div>
                         <hr className="my-2" />
                         <p>{blogData.data.description}</p>
-                        <a className="text-uppercase" href={`shares/${blogData.id}`}>Leer Más <i className="bi bi-arrow-right"></i></a>
+                        <Link className="text-uppercase" href={`shares/${blogData.id}`}>Leer Más <i className="bi bi-arrow-right"></i></Link>
                     </div>
                 </div>
             </div>
