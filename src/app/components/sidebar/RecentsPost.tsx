@@ -21,14 +21,9 @@ export const RecentPosts = () => {
 
     useEffect(() => {
         getBlogs()
-            .then( resp=> {
-                setMiniBlogs(resp)
-                setLoading(false)
-            } )
-            .catch(err => {
-                setLoading(false)
-                alert(err)
-            })
+            .then( resp=> setMiniBlogs(resp) )
+            .catch(err => alert(err) )
+            .finally(() => setLoading(false))
     }, [])
     
 

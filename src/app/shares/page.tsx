@@ -9,11 +9,11 @@ export default function SharesPage() {
 
     useEffect(() => {
         setIsLoading(true)
-        fetch('/api/blogs')
+        fetch('/api/blogs', { next: { revalidate: 3600 } })
             .then(resp => resp.json())
             .then(data => setSomeBlogs(data))
             .catch(err => console.log(err))
             .finally(() => setIsLoading(false))
     }, [])
-    return <Shares section="Noticias - Blogs" title="Enterate De Todas Las Participaciones del Concejo" blogs={someBlogs} isLoading={isLoading} />
+    return <Shares section="Noticias - Blogs" title="Enterate De Todas Las Participaciones del Concejo" blogs={someBlogs}/>
 }

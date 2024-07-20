@@ -44,10 +44,10 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading = false }:
                         <h5 className="fw-bold text-primary text-uppercase">{section}</h5>
                         <h1 className="mb-0">{title}</h1>
                     </div>
-                    <div className="row g-5">
+                    <div className="row g-5" style={{minHeight: '300px'}}>
                         {
                             isLoading
-                                ? <div className='d-flex justify-content-center'>
+                                ? <div className='d-flex justify-content-center align-items-center' style={{minHeight: '300px'}}>
                                     <Spinner />
                                 </div>
                                 : blogs.map((blog: Blog) =>

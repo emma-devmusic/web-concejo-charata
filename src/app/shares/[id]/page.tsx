@@ -24,15 +24,9 @@ export default function BlogPage({ params }: Props) {
     useEffect(() => {
         setIsLoading(true)
         getBlogByIdFromDB(params.id)
-            .then(
-                (resp:any) => {
-                    setBlogState(resp.data)
-                    setIsLoading(false)
-                }
-            )
-            .catch(err => {
-                setIsLoading(false)
-            })
+            .then((resp: any) => setBlogState(resp.data))
+            .catch(err => setIsLoading(false))
+            .finally(() => setIsLoading(false))
     }, [])
 
     useEffect(() => {
@@ -41,13 +35,13 @@ export default function BlogPage({ params }: Props) {
 
     if (isLoading) return <Loading />
 
-    if(blogState)
-    return (
-        <Layout title={blogState.title}>
-            <div className="row">
-                <div ref={htmlRef} id='blog-html' className="col-lg-8"></div>
-                <SidebarBlog />
-            </div>
-        </Layout>
-    );
+    if (blogState)
+        return (
+            <Layout title={blogState.title}>
+                <div className="row">
+                    <div ref={htmlRef} id='blog-html' className="col-lg-8"></div>
+                    <SidebarBlog />
+                </div>
+            </Layout>
+        );
 }
