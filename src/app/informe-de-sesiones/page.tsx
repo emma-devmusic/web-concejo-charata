@@ -1,17 +1,10 @@
-'use client'
 
-import { useEffect, useState } from "react";
 import Shares from "../views/Shares";
-import { Blog } from "../types";
 
-export default function InformeSesionesPage() {
+export default async function InformeSesionesPage() {
     
-    const [blogs, setBlogs] = useState<Blog[]>([])
+    const resp = await fetch('http://localhost:3000/api/sessions', { next: { revalidate: 60 } })
+    const blogs = await resp.json()
 
-    useEffect(() => {
-        fetch('/api/sessions', { next: { revalidate: 3600 } })
-            .then(resp => resp.json())
-            .then(data => setBlogs(data))
-    }, [])
     return <Shares section="Noticias - Blogs" title="Enterate De Todas Las Participaciones del Concejo" blogs={blogs} />
 }
