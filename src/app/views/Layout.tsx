@@ -1,4 +1,4 @@
-
+'use client'
 import { BackToTop, Footer, Navbar, SmallBanner } from "../components"
 
 interface Props {

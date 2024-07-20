@@ -3,15 +3,19 @@
 import { Layout } from './Layout';
 import { CardBlog } from "../components/blog/CardBlog";
 import { Blog } from "../types";
+import { Spinner } from '../components/spinner/Spinner';
 
 interface Props {
     blogs: Blog[];
     title: string;
     section: string;
     withLayout?: boolean;
+    isLoading?: boolean;
 }
 
-const Shares = ({ blogs, title, section, withLayout = true}: Props) => {
+const Shares = ({ blogs, title, section, withLayout = true, isLoading = false }: Props) => {
+
+
 
 
     if (!withLayout) return (
@@ -42,9 +46,13 @@ const Shares = ({ blogs, title, section, withLayout = true}: Props) => {
                     </div>
                     <div className="row g-5">
                         {
-                            blogs.map((blog: Blog) =>
-                                <CardBlog blogData={blog} key={blog.id} />
-                            )
+                            isLoading
+                                ? <div className='d-flex justify-content-center'>
+                                    <Spinner />
+                                </div>
+                                : blogs.map((blog: Blog) =>
+                                    <CardBlog blogData={blog} key={blog.id} />
+                                )
                         }
                     </div>
                 </div>

@@ -40,8 +40,8 @@ export default function BlogPage({ params }: Props) {
     }, [blogState])
 
     if (isLoading) return <Loading />
-    if(!blogState) return <Layout title={'UPS!'}><h2>No Existe Blog</h2></Layout>
 
+    if(blogState)
     return (
         <Layout title={blogState.title}>
             <div className="row">
