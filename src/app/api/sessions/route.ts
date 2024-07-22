@@ -1,5 +1,7 @@
 import { getBlogByCategoryFromDB } from '@/services/blogs'
 
+export const revalidate = 60
+
 export async function GET() {
    
         try {
