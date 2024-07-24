@@ -13,7 +13,7 @@ interface Props {
     section: string;
     withLayout?: boolean;
     isLoading?: boolean;
-    setBlogs: Dispatch<SetStateAction<Blog[]>>;
+    setBlogs?: Dispatch<SetStateAction<Blog[]>>;
     paginado?: boolean
 }
 
@@ -28,7 +28,7 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
         setLoading(true)
 
         getNineBlogsByPage(null, blogs[0].data.id-1)
-            .then((resp: any) => setBlogs(resp))
+            .then((resp: any) => {if(setBlogs) setBlogs(resp)})
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         setPageState(pageState - 1)
@@ -39,7 +39,7 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
         if (blogs.length < 9) return;
         setLoading(true)
         getNineBlogsByPage(blogs[blogs.length - 1].data.id , null)
-            .then((resp: any) => setBlogs(resp))
+            .then((resp: any) => {if(setBlogs) setBlogs(resp)})
             .catch(err => console.log(err))
             .finally(() => setLoading(false))
         setPageState(pageState + 1)

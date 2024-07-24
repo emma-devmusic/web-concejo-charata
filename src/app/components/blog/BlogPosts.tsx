@@ -13,6 +13,6 @@ export const BlogPosts = () => {
         .then(data => setSomeBlogs(data))
     }, [])
     
-    return <Shares section="Blogs - Noticias" title="Enterate de Noticias y Resúmenes de Sesiones" blogs={ someBlogs } withLayout={false}/>
+    return <Shares section="Blogs - Noticias" title="Enterate de Noticias y Resúmenes de Sesiones" blogs={ someBlogs } withLayout={false} setBlogs={setSomeBlogs}/>
 
 }
