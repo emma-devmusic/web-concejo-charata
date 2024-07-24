@@ -35,6 +35,6 @@ export interface DataBlog {
     title: string;
     creator: string;
     description: string;
-    id: string;
+    id: number;
 }
 

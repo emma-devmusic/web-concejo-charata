@@ -1,9 +1,9 @@
-import { getSomeBlogsFromDB, getterBlogFromDB } from "@/services/blogs"
+import { getNineBlogsByPage, getSomeBlogsFromDB, getterBlogFromDB } from "@/services/blogs"
 
 export async function GET( ) {
    
     try {
-        const blogs = await getterBlogFromDB('concejo-charata')
+        const blogs = await getNineBlogsByPage(null, null)
         return Response.json(blogs)
     } catch (error) {
         return Response.json({ message: 'Error al cargar archivos' })
@@ -23,3 +23,5 @@ export async function POST( request: Request ) {
         return Response.json({ message: 'Error al cargar archivos' })
     }
 }
+
+

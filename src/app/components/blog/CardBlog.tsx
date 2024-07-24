@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Blog } from "@/app/types";
 import Link from "next/link";
 
+
 export const CardBlog = ({ blogData }: { blogData: Blog }) => {
         return (
             <div className="col-lg-4 wow slideInUp" data-wow-delay="0.3s">

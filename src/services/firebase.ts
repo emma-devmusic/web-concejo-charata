@@ -24,3 +24,4 @@ export const app = initializeApp(firebaseConfig);
 
 //conect database
 export const db = getFirestore(app);
+

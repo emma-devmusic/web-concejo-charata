@@ -10,7 +10,7 @@ export const RecentPosts = () => {
 
     useEffect(() => {
         setLoading(true)
-        fetch('/api/blogs', { method: 'POST', body: JSON.stringify({ limit: 3 }), cache: 'force-cache' })
+        fetch('/api/blogs', { method: 'POST', body: JSON.stringify({ limit: 6 })})
             .then(resp => resp.json())
             .then(data => setMiniBlogs(data))
             .finally(() => setLoading(false))
