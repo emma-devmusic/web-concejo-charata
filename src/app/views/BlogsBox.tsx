@@ -4,7 +4,6 @@ import { Layout } from './Layout';
 import { CardBlog } from "../components/blog/CardBlog";
 import { Blog } from "../types";
 import { Spinner } from '../components/spinner/Spinner';
-import { getNineBlogsByPage } from '@/services/blogs';
 import { Dispatch, SetStateAction, useState } from 'react';
 
 interface Props {
@@ -14,37 +13,20 @@ interface Props {
     withLayout?: boolean;
     isLoading?: boolean;
     setBlogs?: Dispatch<SetStateAction<Blog[]>>;
-    paginado?: boolean
+    paginado?: boolean;
+    filter?: string;
+    handleNextPage?: () => void;
+    handlePrevPage?: () => void;
+    pageState?: number;
 }
 
-const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs, paginado = false }: Props) => {
+const BlogsBox = ({ blogs, title, section, withLayout = true, isLoading, paginado = false, handleNextPage, handlePrevPage, pageState }: Props) => {
+
 
     const [loading, setLoading] = useState(false)
 
-
-    const [pageState, setPageState] = useState(1);
-    const handleBackward = () => {
-        if (pageState === 1) return;
-        setLoading(true)
-
-        getNineBlogsByPage(null, blogs[0].data.id-1)
-            .then((resp: any) => {if(setBlogs) setBlogs(resp)})
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        setPageState(pageState - 1)
-    }
-
-    const handleForward = () => {
-
-        if (blogs.length < 9) return;
-        setLoading(true)
-        getNineBlogsByPage(blogs[blogs.length - 1].data.id , null)
-            .then((resp: any) => {if(setBlogs) setBlogs(resp)})
-            .catch(err => console.log(err))
-            .finally(() => setLoading(false))
-        setPageState(pageState + 1)
-    }
-
+ 
+    
 
     if (!withLayout) return (
         <>
@@ -54,7 +36,7 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
                         <Spinner />
                     </div>
                     :
-                    <div className="container-fluid wow fadeInUp" data-wow-delay="0.1s">
+                    <div className="container-fluid" >
                         <div className="container ">
                             <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{ maxWidth: "600px" }}>
                                 <h5 className="fw-bold text-primary text-uppercase">{section}</h5>
@@ -71,9 +53,9 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
                             {
                                 paginado &&
                                 <div className='d-flex gap-2 align-items-center justify-content-center my-5'>
-                                    <button className='btn btn-primary' onClick={handleBackward}>Anterior</button>
-                                    <div>1</div>
-                                    <button className='btn btn-primary' onClick={handleForward}>Siguiente</button>
+                                    <button className='btn btn-primary' onClick={handlePrevPage}>Anterior</button>
+                                    <div>{pageState}</div>
+                                    <button className='btn btn-primary' onClick={handleNextPage}>Siguiente</button>
                                 </div>
                             }
                         </div>
@@ -90,7 +72,7 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
                         <Spinner />
                     </div>
                     :
-                    <div className="container-fluid wow fadeInUp" >
+                    <div className="container-fluid" >
                         <div className="container ">
                             <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{ maxWidth: "600px" }}>
                                 <h5 className="fw-bold text-primary text-uppercase">{section}</h5>
@@ -107,9 +89,9 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
                             {
                                 paginado &&
                                 <div className='d-flex gap-2 align-items-center justify-content-center my-5'>
-                                    <button className='btn btn-primary' onClick={handleBackward}>Anterior</button>
+                                    <button className='btn btn-primary' onClick={handlePrevPage}>Anterior</button>
                                     <div>{pageState}</div>
-                                    <button className='btn btn-primary' onClick={handleForward}>Siguiente</button>
+                                    <button className='btn btn-primary' onClick={handleNextPage}>Siguiente</button>
                                 </div>
                             }
                         </div>
@@ -119,4 +101,4 @@ const Shares = ({ blogs, title, section, withLayout = true, isLoading, setBlogs,
     );
 };
 
-export default Shares;
+export default BlogsBox;

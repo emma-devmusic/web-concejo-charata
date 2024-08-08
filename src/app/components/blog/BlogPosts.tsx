@@ -1,6 +1,6 @@
 
 import { Blog } from "@/app/types";
-import Shares from "@/app/views/Shares";
+import Shares from "@/app/views/BlogsBox";
 import { useEffect, useState } from "react";
 
 export const BlogPosts = () => {
