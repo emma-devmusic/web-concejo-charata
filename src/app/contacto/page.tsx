@@ -86,16 +86,16 @@ export default function ContactoPage() {
                                 <form onSubmit={handleSendEmail}>
                                     <div className="row g-3">
                                         <div className="col-md-6">
-                                            <input value={values.name} onChange={handleInputChange} name='name' type="text" className="form-control border-0 bg-light px-4" placeholder="Nombre" style={{ height: '55px' }} />
+                                            <input value={values.name} onChange={handleInputChange} name='name' type="text" className="form-control border-0 bg-light px-4" placeholder="Nombre" style={{ height: '55px' }} required/>
                                         </div>
                                         <div className="col-md-6">
-                                            <input value={values.email} onChange={handleInputChange} name='email' type="email" className="form-control border-0 bg-light px-4" placeholder="Correo Electrónico" style={{ height: '55px' }} />
+                                            <input value={values.email} onChange={handleInputChange} name='email' type="email" className="form-control border-0 bg-light px-4" placeholder="Correo Electrónico" style={{ height: '55px' }} required/>
                                         </div>
                                         <div className="col-12">
-                                            <input value={values.issue} onChange={handleInputChange} name='issue' type="text" className="form-control border-0 bg-light px-4" placeholder="Asunto" style={{ height: '55px' }} />
+                                            <input value={values.issue} onChange={handleInputChange} name='issue' type="text" className="form-control border-0 bg-light px-4" placeholder="Asunto" style={{ height: '55px' }} required/>
                                         </div>
                                         <div className="col-12">
-                                            <textarea value={values.msg} onChange={handleInputChange} name='msg' className="form-control border-0 bg-light px-4 py-3" rows={4} placeholder="Mensaje"></textarea>
+                                            <textarea value={values.msg} onChange={handleInputChange} name='msg' className="form-control border-0 bg-light px-4 py-3" rows={4} placeholder="Mensaje" required></textarea>
                                         </div>
                                         <div className="col-12">
                                             <button className="btn btn-primary w-100 py-3" type="submit">Enviar</button>

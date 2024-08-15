@@ -34,7 +34,7 @@ export const AboutUs = () => {
                                 <h4 className="text-primary mb-0">3731 62-5581</h4>
                             </div>
                         </div>
-                        <Link href="" className="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Envíanos un Mensaje</Link>
+                        <Link href="#contactUs" className="btn btn-primary py-3 px-5 mt-3 wow zoomIn" data-wow-delay="0.9s">Envíanos un Mensaje</Link>
                     </div>
                     <div className="col-lg-5" style={{ minHeight: "500px" }}>
                         <div className="position-relative h-100">
