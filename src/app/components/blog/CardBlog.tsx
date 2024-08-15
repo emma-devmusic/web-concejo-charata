@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const CardBlog = ({ blogData }: { blogData: Blog }) => {
         return (
-            <div className="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+            <div className="col-lg-4">
                 <div className="blog-item bg-light rounded overflow-hidden">
                     <div className="blog-img position-relative overflow-hidden">
                         <Image width={400} height={280} className="img-fluid" src={blogData.data.image} alt="Imagen de la noticia"
