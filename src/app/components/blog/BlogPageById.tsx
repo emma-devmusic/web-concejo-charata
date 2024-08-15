@@ -10,7 +10,7 @@ export const BlogPageById = ({ blog }: { blog: Blog }) => {
     useEffect(() => {
         if (htmlRef.current && blog && typeof blog !== 'string') htmlRef.current.innerHTML = blog.data.html
     }, [blog.data])
-
+    
     if(!blog) return <p>Cargado...</p>
 
     return (

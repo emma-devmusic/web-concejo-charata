@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     try {
         const res: EmailTemplateProps = await request.json()
         const { data, error } = await resend.emails.send({
-            from: 'Página Web del Concejo <onboarding@resend.dev>',
+            from: 'Concejo Deliberante de Charata <onboarding@resend.dev>',
             // from: `${res.email}`,
             to: ['concejoch@gmail.com'],
             // to: ['ema.araujo.ea@gmail.com'],
