@@ -190,4 +190,15 @@ export const ordenesMock:Order[] =
             },
         ]
     },
+    {
+        id: 9,
+        month: 'Octubre',
+        ordersList: [
+            {
+                date: '07/10/2024',
+                path: '29',
+                name: 'Sesión Ordinaria N°29'
+            }
+        ]
+    },
 ]
