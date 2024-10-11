@@ -105,5 +105,9 @@ export default function InformeSesionesPage() {
         handleNextPage={handleNextPage}
         handlePrevPage={handlePrevPage}
         pageState={pageState}
+        blogsNumber={blogsNumber}
+        setFirstDocument={setFirstDocument}
+        setLastDocument={setLastDocument}
+        setIsLoading={setIsLoading}
     />
 }

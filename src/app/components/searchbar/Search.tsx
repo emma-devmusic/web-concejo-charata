@@ -4,6 +4,7 @@ import { getterCategoriesFromDB } from "@/services/categories";
 import { db } from "@/services/firebase";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { collection, getDocs, limit, onSnapshot, orderBy, query, where } from "firebase/firestore";
+import { usePathname, useRouter } from "next/navigation";
 import { Dispatch, SetStateAction, use, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -21,12 +22,14 @@ interface Props {
 
 export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocument, setIsLoading, categorySelected, setCategorySelected }: Props) => {
 
+    const path = usePathname()
     const [loadingCategories, setLoadingCategories] = useState(false)
     const [categories, setCategories] = useState([] as Category[])
     const [inputValue, setInputValue] = useState({
         keyword: '',
     })
 
+    console.log()
 
     useEffect(() => {
         if (categories.length === 0) {
@@ -78,6 +81,8 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
                 data: { ...doc.data() },
             }));
             setBlogs(matchedResults as Blog[]);
+        } else {
+            handleResetSearch()
         }
     }
 
@@ -114,26 +119,28 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
                     name="keyword"
                     value={inputValue.keyword}
                     onChange={(e) => setInputValue({ ...inputValue, keyword: e.target.value })}
-                    required
                 />
                 <button className="btn btn-primary px-4 fs-4" type="submit"><Icon icon={'material-symbols:search'} /></button>
-                <button className="btn btn-outline-primary px-4 fs-4" onClick={handleResetSearch} style={{ border: 'none' }}><Icon icon={'hugeicons:reload'} /></button>
+                <button className="btn btn-outline-primary px-4 fs-4" onClick={handleResetSearch} style={{ }}><Icon icon={'hugeicons:reload'} /></button>
             </form>
-            <div className="input-group w-100 w-sm-auto" style={{ maxWidth: '300px' }}>
-
-                <select
-                    className="form-select p-3"
-                    name="categories"
-                    onChange={(e: any) => setCategorySelected(e.target.value)}
-                >
-                    <option value="">Todas las categorías</option>
-                    {
-                        loadingCategories
-                            ? <option value="">Cargando Categorías...</option>
-                            : categories.map(category => <option value={category.name} key={category.name}>{category.name}</option>)
-                    }
-                </select>
-            </div>
+            {
+                !path.includes('informe-de-sesiones')
+                &&
+                <div className="input-group w-100 w-sm-auto mt-2 m-md-0" style={{ maxWidth: '600px' }}>
+                    <select
+                        className="form-select p-3"
+                        name="categories"
+                        onChange={(e: any) => setCategorySelected(e.target.value)}
+                    >
+                        <option value="">Todas las categorías</option>
+                        {
+                            loadingCategories
+                                ? <option value="">Cargando Categorías...</option>
+                                : categories.map(category => <option value={category.name} key={category.name}>{category.name}</option>)
+                        }
+                    </select>
+                </div>
+            }
         </div>
     );
 };
