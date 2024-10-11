@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { Blog } from "@/app/types";
 import Link from "next/link";
 import dayjs from "dayjs";
-import { useState } from "react";
+import { Blog } from "@/app/types";
 
 
 export const CardBlog = ({ blogData }: { blogData: Blog }) => {
+
 
     return (
         <div className="col-lg-4">

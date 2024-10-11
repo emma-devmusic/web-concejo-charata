@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Blog } from "../types";
 import BlogsBox from "../views/BlogsBox";
-import { collection, DocumentData, limit, onSnapshot, orderBy, query, QuerySnapshot, startAfter } from "firebase/firestore";
+import { collection, DocumentData, limit, onSnapshot, orderBy, query, QuerySnapshot, startAfter, where } from "firebase/firestore";
 import { db } from "@/services/firebase";
 import Swal from "sweetalert2";
 
@@ -15,7 +15,8 @@ export default function SharesPage() {
     const [firstDocument, setFirstDocument] = useState<any>(null)
     const [lastDocument, setLastDocument] = useState<any>(null)
     const [pageState, setPageState] = useState(1)
-    const [blogsNumber] = useState(3)
+    const [blogsNumber] = useState(6)
+    const [categorySelected, setCategorySelected] = useState('')
 
 
 
@@ -44,6 +45,9 @@ export default function SharesPage() {
     const handleNextPage = () => {
         const blogs = collection(db, "entity", `concejo-charata`, "blogs");
         let q = query(blogs, limit(blogsNumber), orderBy('date', 'desc'), startAfter(lastDocument))
+        if(categorySelected !== ''){
+            q = query(blogs, limit(blogsNumber), orderBy('date', 'desc'), startAfter(lastDocument), where('category', '==', categorySelected))
+        }
         try {
             onSnapshot(q, (querySnapshot) => {
                 if (querySnapshot.docs.length >= 1) {
@@ -71,6 +75,9 @@ export default function SharesPage() {
     const handlePrevPage = () => {
         const blogs = collection(db, "entity", `concejo-charata`, "blogs");
         let q = query(blogs, limit(blogsNumber), orderBy('date', 'asc'), startAfter(firstDocument))
+        if(categorySelected !== ''){
+            q = query(blogs, limit(blogsNumber), orderBy('date', 'asc'), startAfter(firstDocument), where('category', '==', categorySelected))
+        }
         try {
             onSnapshot(q, (snapshot) => {
                 const documentsRevers: any = snapshot.docs.reverse()
@@ -104,5 +111,11 @@ export default function SharesPage() {
         handleNextPage={handleNextPage}
         handlePrevPage={handlePrevPage}
         pageState={pageState}
+        blogsNumber={blogsNumber}
+        setFirstDocument={setFirstDocument}
+        setLastDocument={setLastDocument}
+        setIsLoading={setIsLoading}
+        categorySelected={categorySelected}
+        setCategorySelected={setCategorySelected}
     />
 }

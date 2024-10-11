@@ -8,7 +8,7 @@ export const Features = () => {
             <div className="container py-5">
                 <div className="section-title text-center position-relative pb-3 mb-5 mx-auto" style={{maxWidth: "600px"}}>
                     <h5 className="fw-bold text-primary text-uppercase">Objetivos</h5>
-                    <h1 className="mb-0">Estamos Aquí Por Una Charata Mejor</h1>
+                    <h1 className="mb-0">Estamos Aquí Por Un Charata Mejor</h1>
                 </div>
                 <div className="row g-5">
                     <div className="col-lg-4">

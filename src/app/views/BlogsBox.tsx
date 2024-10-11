@@ -5,6 +5,7 @@ import { CardBlog } from "../components/blog/CardBlog";
 import { Blog } from "../types";
 import { Spinner } from '../components/spinner/Spinner';
 import { Dispatch, SetStateAction, useState } from 'react';
+import { Search } from '../components/searchbar/Search';
 
 interface Props {
     blogs: Blog[];
@@ -18,15 +19,17 @@ interface Props {
     handleNextPage?: () => void;
     handlePrevPage?: () => void;
     pageState?: number;
+    blogsNumber?: number
+    setFirstDocument?: any;
+    setLastDocument?: any;
+    setIsLoading?: any;
+    categorySelected?: string;
+    setCategorySelected?: any;
 }
 
-const BlogsBox = ({ blogs, title, section, withLayout = true, isLoading, paginado = false, handleNextPage, handlePrevPage, pageState }: Props) => {
-
+const BlogsBox = ({ blogs, title, section, withLayout = true, isLoading, setIsLoading, paginado = false, handleNextPage, handlePrevPage, pageState, setBlogs, blogsNumber = 3, setFirstDocument, setLastDocument, categorySelected = '', setCategorySelected }: Props) => {
 
     const [loading, setLoading] = useState(false)
-
- 
-    
 
     if (!withLayout) return (
         <>
@@ -78,6 +81,18 @@ const BlogsBox = ({ blogs, title, section, withLayout = true, isLoading, paginad
                                 <h5 className="fw-bold text-primary text-uppercase">{section}</h5>
                                 <h1 className="mb-0">{title}</h1>
                             </div>
+                            {
+                                setBlogs &&
+                                <Search 
+                                    setBlogs={setBlogs} 
+                                    blogsNumber={blogsNumber}
+                                    setIsLoading={setIsLoading}
+                                    setFirstDocument={setFirstDocument}
+                                    setLastDocument={setLastDocument}
+                                    setCategorySelected={setCategorySelected}
+                                    categorySelected={categorySelected}
+                                />
+                            }
                             <div className="row g-5" style={{ minHeight: '300px' }}>
                                 {
 

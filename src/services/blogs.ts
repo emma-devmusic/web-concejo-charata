@@ -1,12 +1,10 @@
 
 import { getFirestore, collection, getDocs, query, where, limit, startAfter, endBefore, doc, getDoc, endAt, orderBy, onSnapshot, QuerySnapshot, DocumentData } from "firebase/firestore";
-import { app } from "./firebase";
+import { db } from "./firebase";
 import Swal from "sweetalert2";
 import { Blog, DataBlog } from "@/app/types";
 
 
-//conect database
-export const db = getFirestore(app);
 
 export const getterBlogFromDB = async (slug: string) => {
 
