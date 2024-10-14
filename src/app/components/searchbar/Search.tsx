@@ -90,7 +90,9 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
     const handleResetSearch = () => {
         setInputValue({ keyword: '' })
         const blogs = collection(db, "entity", `concejo-charata`, "blogs");
-        let q = query(blogs, limit(blogsNumber), orderBy('date', 'desc'))
+        let q = categorySelected
+            ? query(blogs, limit(blogsNumber), orderBy('date', 'desc'), where('category', '==', categorySelected))
+            : query(blogs, limit(blogsNumber), orderBy('date', 'desc'))
         try {
             onSnapshot(q, (querySnapshot) => {
                 setFirstDocument(querySnapshot.docs[0])
@@ -121,7 +123,7 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
                     onChange={(e) => setInputValue({ ...inputValue, keyword: e.target.value })}
                 />
                 <button className="btn btn-primary px-4 fs-4" type="submit"><Icon icon={'material-symbols:search'} /></button>
-                <button className="btn btn-outline-primary px-4 fs-4" onClick={handleResetSearch} style={{ }}><Icon icon={'hugeicons:reload'} /></button>
+                <button className="btn btn-outline-primary px-4 fs-4" onClick={handleResetSearch} style={{}}><Icon icon={'hugeicons:reload'} /></button>
             </form>
             {
                 !path.includes('informe-de-sesiones')

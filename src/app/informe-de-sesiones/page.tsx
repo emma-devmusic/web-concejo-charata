@@ -16,7 +16,7 @@ export default function InformeSesionesPage() {
     const [firstDocument, setFirstDocument] = useState<any>(null)
     const [lastDocument, setLastDocument] = useState<any>(null)
     const [pageState, setPageState] = useState(1)
-    const [blogsNumber] = useState(3)
+    const [blogsNumber] = useState(6)
 
 
 
@@ -109,5 +109,6 @@ export default function InformeSesionesPage() {
         setFirstDocument={setFirstDocument}
         setLastDocument={setLastDocument}
         setIsLoading={setIsLoading}
+        categorySelected="Sesión"
     />
 }
