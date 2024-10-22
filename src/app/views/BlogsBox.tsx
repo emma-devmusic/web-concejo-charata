@@ -95,7 +95,6 @@ const BlogsBox = ({ blogs, title, section, withLayout = true, isLoading, setIsLo
                             }
                             <div className="row g-5" style={{ minHeight: '300px' }}>
                                 {
-
                                     blogs.map((blog: Blog) =>
                                         <CardBlog blogData={blog} key={blog.id} />
                                     )

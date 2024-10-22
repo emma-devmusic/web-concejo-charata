@@ -4,7 +4,7 @@ import { getterCategoriesFromDB } from "@/services/categories";
 import { db } from "@/services/firebase";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { collection, getDocs, limit, onSnapshot, orderBy, query, where } from "firebase/firestore";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Dispatch, SetStateAction, use, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -29,7 +29,6 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
         keyword: '',
     })
 
-    console.log()
 
     useEffect(() => {
         if (categories.length === 0) {
@@ -92,7 +91,7 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
         const blogs = collection(db, "entity", `concejo-charata`, "blogs");
         let q = categorySelected
             ? query(blogs, limit(blogsNumber), orderBy('date', 'desc'), where('category', '==', categorySelected))
-            : query(blogs, limit(blogsNumber), orderBy('date', 'desc'))
+            : query(blogs, limit(blogsNumber), where('category', '!=', 'Sesión'))
         try {
             onSnapshot(q, (querySnapshot) => {
                 setFirstDocument(querySnapshot.docs[0])
