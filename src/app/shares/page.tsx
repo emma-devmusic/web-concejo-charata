@@ -26,6 +26,7 @@ export default function SharesPage() {
         let q = query(blogs, limit(blogsNumber), orderBy('date', 'desc'))
         try {
             onSnapshot(q, (querySnapshot) => {
+                console.log(querySnapshot.docs)
                 setFirstDocument(querySnapshot.docs[0])
                 setLastDocument(querySnapshot.docs[querySnapshot.docs.length - 1])
                 setBlogs([])

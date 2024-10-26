@@ -42,7 +42,7 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
     useEffect(() => {
         if (categorySelected !== '') {
             setInputValue({ keyword: '' })
-            const blogs = collection(db, "entity", `concejo-charata`, "blogs");
+            const blogs = collection(db, "entity", `concejo-charata`, `${path.includes('informe-de-sesiones') ? 'sesiones' : 'blogs'}`);
             let q = query(blogs, limit(blogsNumber), orderBy('date', 'desc'), where('category', '==', categorySelected))
             try {
                 onSnapshot(q, (querySnapshot) => {
@@ -71,7 +71,7 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
         if (keyword !== '') {
             const arrayWords = keyword.toLowerCase().split(' ');
             const q = query(
-                collection(db, "entity", `concejo-charata`, "blogs"),
+                collection(db, "entity", `concejo-charata`, `${path.includes('informe-de-sesiones') ? 'sesiones' : 'blogs'}`),
                 where("keywords", "array-contains-any", arrayWords)
             );
             const querySnapshot = await getDocs(q);
@@ -88,10 +88,8 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
 
     const handleResetSearch = () => {
         setInputValue({ keyword: '' })
-        const blogs = collection(db, "entity", `concejo-charata`, "blogs");
-        let q = categorySelected
-            ? query(blogs, limit(blogsNumber), orderBy('date', 'desc'), where('category', '==', categorySelected))
-            : query(blogs, limit(blogsNumber), where('category', '!=', 'Sesión'))
+        const blogs = collection(db, "entity", `concejo-charata`, `${path.includes('informe-de-sesiones') ? 'sesiones' : 'blogs'}`);
+        let q = query(blogs, limit(blogsNumber), orderBy('date', 'desc'))
         try {
             onSnapshot(q, (querySnapshot) => {
                 setFirstDocument(querySnapshot.docs[0])
@@ -137,7 +135,7 @@ export const Search = ({ setBlogs, blogsNumber, setFirstDocument, setLastDocumen
                         {
                             loadingCategories
                                 ? <option value="">Cargando Categorías...</option>
-                                : categories.map(category => <option value={category.name} key={category.name}>{category.name}</option>)
+                                : categories.map(category => {if(category.name !== 'Sesión')return <option value={category.name} key={category.name}>{category.name}</option>})
                         }
                     </select>
                 </div>

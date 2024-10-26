@@ -22,10 +22,11 @@ export default function InformeSesionesPage() {
 
     useEffect(() => {
         setIsLoading(true)
-        const blogs = collection(db, "entity", `concejo-charata`, "blogs");
-        let q = query(blogs, where("category", "==", 'Sesión'), orderBy('date', 'desc'), limit(blogsNumber))
+        const blogs = collection(db, "entity", `concejo-charata`, "sesiones");
+        let q = query(blogs, orderBy('date', 'desc'), limit(blogsNumber))
         try {
             onSnapshot(q, (querySnapshot) => {
+                console.log(querySnapshot.docs)
                 setFirstDocument(querySnapshot.docs[0])
                 setLastDocument(querySnapshot.docs[querySnapshot.docs.length - 1])
                 setBlogs([])
@@ -43,8 +44,8 @@ export default function InformeSesionesPage() {
 
 
     const handleNextPage = () => {
-        const blogs = collection(db, "entity", `concejo-charata`, "blogs");
-        let q = query(blogs, where("category", "==", 'Sesión'), orderBy('date', 'desc'), limit(blogsNumber), startAfter(lastDocument))
+        const blogs = collection(db, "entity", `concejo-charata`, "sesiones");
+        let q = query(blogs, orderBy('date', 'desc'), limit(blogsNumber), startAfter(lastDocument))
         try {
             onSnapshot(q, (querySnapshot) => {
                 if (querySnapshot.docs.length >= 1) {
@@ -70,8 +71,8 @@ export default function InformeSesionesPage() {
 
 
     const handlePrevPage = () => {
-        const blogs = collection(db, "entity", `concejo-charata`, "blogs");
-        let q = query(blogs, where("category", "==", 'Sesión'), orderBy('date', 'asc'), limit(blogsNumber), startAfter(firstDocument))
+        const blogs = collection(db, "entity", `concejo-charata`, "sesiones");
+        let q = query(blogs, orderBy('date', 'asc'), limit(blogsNumber), startAfter(firstDocument))
         try {
             onSnapshot(q, (snapshot) => {
                 const documentsRevers: any = snapshot.docs.reverse()
@@ -97,7 +98,7 @@ export default function InformeSesionesPage() {
 
     return <BlogsBox
         section="Noticias - Blogs"
-        title="Enterate De Todas Las Participaciones del Concejo"
+        title="Resúmenes de Sesiones"
         blogs={blogs}
         setBlogs={setBlogs}
         isLoading={isLoading}
@@ -109,6 +110,6 @@ export default function InformeSesionesPage() {
         setFirstDocument={setFirstDocument}
         setLastDocument={setLastDocument}
         setIsLoading={setIsLoading}
-        categorySelected="Sesión"
+        // categorySelected="Sesión"
     />
 }
