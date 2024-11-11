@@ -225,6 +225,11 @@ export const ordenesMock:Order[] =
                 path: '33',
                 name: 'Sesión Ordinaria N°33'
             },
+            {
+                date: '11/11/2024',
+                path: '34',
+                name: 'Sesión Ordinaria N°34'
+            },
         ]
     },
 ]
