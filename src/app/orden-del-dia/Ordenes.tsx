@@ -8,7 +8,7 @@ export const Ordenes = () => {
     return (
         <div className="accordion" id="accordionExample">
             {
-                ordenesMock.map( e => 
+                ordenesMock.reverse().map( e => 
                     <Orden 
                         id={e.id}
                         month={e.month}

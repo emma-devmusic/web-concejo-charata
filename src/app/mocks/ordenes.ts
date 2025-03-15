@@ -4,7 +4,7 @@ export const ordenesMock:Order[] =
 [
     {
         id: 1,
-        month: 'Enero',
+        month: 'Enero - 2024',
         ordersList: [
             {
                 date: '29/01/2024',
@@ -15,7 +15,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 2,
-        month: 'Marzo',
+        month: 'Marzo - 2024',
         ordersList: [
             {
                 date: '04/03/2024',
@@ -41,7 +41,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 3,
-        month: 'Abril',
+        month: 'Abril - 2024',
         ordersList: [
             {
                 date: '08/04/2024',
@@ -67,7 +67,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 4,
-        month: 'Mayo',
+        month: 'Mayo - 2024',
         ordersList: [
             {
                 date: '06/05/2024',
@@ -93,7 +93,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 5,
-        month: 'Junio',
+        month: 'Junio - 2024',
         ordersList: [
             {
                 date: '03/06/2024',
@@ -114,7 +114,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 6,
-        month: 'Julio',
+        month: 'Julio - 2024',
         ordersList: [
             {
                 date: '01/07/2024',
@@ -135,7 +135,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 7,
-        month: 'Agosto',
+        month: 'Agosto - 2024',
         ordersList: [
             {
                 date: '05/08/2024',
@@ -161,7 +161,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 8,
-        month: 'Septiembre',
+        month: 'Septiembre - 2024',
         ordersList: [
             {
                 date: '02/09/2024',
@@ -192,7 +192,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 9,
-        month: 'Octubre',
+        month: 'Octubre - 2024',
         ordersList: [
             {
                 date: '07/10/2024',
@@ -218,7 +218,7 @@ export const ordenesMock:Order[] =
     },
     {
         id: 10,
-        month: 'Noviembre',
+        month: 'Noviembre - 2024',
         ordersList: [
             {
                 date: '04/11/2024',
@@ -229,6 +229,38 @@ export const ordenesMock:Order[] =
                 date: '11/11/2024',
                 path: '34',
                 name: 'Sesión Ordinaria N°34'
+            },
+            {
+                date: '25/11/2024',
+                path: '35',
+                name: 'Sesión Ordinaria N°35'
+            },
+        ]
+    },
+    {
+        id: 11,
+        month: 'Diciembre - 2024',
+        ordersList: [
+            {
+                date: '02/12/2024',
+                path: '36',
+                name: 'Sesión Ordinaria N°36'
+            },
+            {
+                date: '09/12/2024',
+                path: '37',
+                name: 'Sesión Ordinaria N°37'
+            },
+        ]
+    },
+    {
+        id: 12,
+        month: 'Marzo - 2025',
+        ordersList: [
+            {
+                date: '10/03/2025',
+                path: '38',
+                name: 'Sesión Ordinaria N°38'
             },
         ]
     },
