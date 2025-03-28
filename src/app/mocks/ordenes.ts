@@ -267,6 +267,11 @@ export const ordenesMock:Order[] =
                 path: '39',
                 name: 'Sesión Ordinaria N°39'
             },
+            {
+                date: '31/03/2025',
+                path: '40',
+                name: 'Sesión Ordinaria N°40'
+            },
         ]
     },
 ]
