@@ -23,7 +23,7 @@ export default function LegislacionPage() {
                         <div className="col-12" style={{maxWidth: '1000px'}}>
                             <h2>Digesto del Municipio</h2>
                             <p>El Digesto del Municipio es un compendio de las leyes, ordenanzas y normativas que regulan el funcionamiento del gobierno local. Aquí puedes consultar todas las disposiciones legales que afectan la vida en nuestra comunidad.</p>
-                            <a href="http://200.58.103.175/greenstone3/library/collection/Digesto/browse/CL1" target="_blank" className="btn btn-outline-success">Ver Digesto</a>
+                            <a href="http://66.97.32.71/greenstone3/library/collection/Digesto/page/about" target="_blank" className="btn btn-outline-success">Ver Digesto</a>
                         </div>
                         <div className="col-lg-6">
                             <h2>Estatuto del Empleado Municipal</h2>
